@@ -22,6 +22,7 @@ namespace Productivity_Tool.Forms
         private void Pomodoro_Load(object sender, EventArgs e)
         {
             time = new TimerObj();
+            TimerBar.Value = 0;
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
@@ -31,7 +32,13 @@ namespace Productivity_Tool.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            LblTimer.Text = time.AddTime();
+            TimerBar.Value += 1;
+            TimerBar.Text = time.AddTime();
+        }
+
+        private void BtnStop_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

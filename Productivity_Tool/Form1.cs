@@ -21,6 +21,7 @@ namespace Productivity_Tool
         private void BtnMain_Click(object sender, EventArgs e)
         {
             Main f = new Main();
+            f.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.RemoveAt(0);
             this.MainDisplayPN.Controls.Add(f);
             f.Show();
@@ -29,6 +30,7 @@ namespace Productivity_Tool
         private void Form1_Load(object sender, EventArgs e)
         {
             Pomodoro m = new Pomodoro();
+            m.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.Add(m);
             m.Show();
         }
@@ -36,9 +38,24 @@ namespace Productivity_Tool
         private void BtnPomodoro_Click(object sender, EventArgs e)
         {
             Pomodoro f = new Pomodoro();
+            f.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.RemoveAt(0);
             this.MainDisplayPN.Controls.Add(f);
             f.Show();
+        }
+
+        private void HoverEffect(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            btn.BackColor = Color.FromArgb(29, 93, 130);
+        }
+
+        private void HoverEffectExit(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            btn.BackColor = Color.FromArgb(8, 65, 92);
         }
     }
 }

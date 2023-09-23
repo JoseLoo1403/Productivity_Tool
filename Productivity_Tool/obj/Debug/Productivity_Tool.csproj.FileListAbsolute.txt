@@ -10,3 +10,7 @@ C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_To
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.pdb
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Main.resources
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Pomodoro.resources
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\CircularProgressBar.dll
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\WinFormAnimation.dll
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\CircularProgressBar.xml
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.csproj.CopyComplete

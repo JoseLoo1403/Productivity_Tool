@@ -1,0 +1,12 @@
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Release\Productivity_Tool.exe.config
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Release\Productivity_Tool.exe
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Release\Productivity_Tool.pdb
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.csproj.AssemblyReference.cache
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.Form1.resources
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.Forms.Main.resources
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.Forms.Pomodoro.resources
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.Properties.Resources.resources
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.csproj.GenerateResource.cache
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.csproj.CoreCompileInputs.cache
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.exe
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Release\Productivity_Tool.pdb

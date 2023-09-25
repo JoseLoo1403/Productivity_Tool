@@ -14,3 +14,10 @@ C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_To
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\WinFormAnimation.dll
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\CircularProgressBar.xml
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.csproj.CopyComplete
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Database.db
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Data.dll
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Dapper.dll
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Data.pdb
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Dapper.xml

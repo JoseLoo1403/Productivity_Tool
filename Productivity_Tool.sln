@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Productivity_Tool", "Productivity_Tool\Productivity_Tool.csproj", "{13BB003E-197A-4C8A-85CF-F28F97A454A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{13BB003E-197A-4C8A-85CF-F28F97A454A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13BB003E-197A-4C8A-85CF-F28F97A454A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13BB003E-197A-4C8A-85CF-F28F97A454A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -36,17 +36,6 @@
             this.TimerBar = new CircularProgressBar.CircularProgressBar();
             this.BtnConfig = new System.Windows.Forms.Button();
             this.BtnStop = new System.Windows.Forms.Button();
-            this.LblStudy = new System.Windows.Forms.Label();
-            this.LblRest = new System.Windows.Forms.Label();
-            this.TxtHourStudy = new System.Windows.Forms.NumericUpDown();
-            this.TxtMinuteStudy = new System.Windows.Forms.NumericUpDown();
-            this.TxtHourRest = new System.Windows.Forms.NumericUpDown();
-            this.TxtMinuteRest = new System.Windows.Forms.NumericUpDown();
-            this.BtnApply = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtHourStudy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMinuteStudy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtHourRest)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMinuteRest)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,97 +135,11 @@
             this.BtnStop.UseVisualStyleBackColor = false;
             this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
             // 
-            // LblStudy
-            // 
-            this.LblStudy.AutoSize = true;
-            this.LblStudy.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.LblStudy.Location = new System.Drawing.Point(139, 505);
-            this.LblStudy.Name = "LblStudy";
-            this.LblStudy.Size = new System.Drawing.Size(128, 31);
-            this.LblStudy.TabIndex = 7;
-            this.LblStudy.Text = "Study Time:";
-            this.LblStudy.Visible = false;
-            // 
-            // LblRest
-            // 
-            this.LblRest.AutoSize = true;
-            this.LblRest.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.LblRest.Location = new System.Drawing.Point(476, 505);
-            this.LblRest.Name = "LblRest";
-            this.LblRest.Size = new System.Drawing.Size(113, 31);
-            this.LblRest.TabIndex = 10;
-            this.LblRest.Text = "Rest Time:";
-            this.LblRest.Visible = false;
-            // 
-            // TxtHourStudy
-            // 
-            this.TxtHourStudy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TxtHourStudy.Font = new System.Drawing.Font("Nirmala UI Semilight", 11F);
-            this.TxtHourStudy.Location = new System.Drawing.Point(112, 562);
-            this.TxtHourStudy.Name = "TxtHourStudy";
-            this.TxtHourStudy.Size = new System.Drawing.Size(81, 32);
-            this.TxtHourStudy.TabIndex = 12;
-            this.TxtHourStudy.Visible = false;
-            // 
-            // TxtMinuteStudy
-            // 
-            this.TxtMinuteStudy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TxtMinuteStudy.Font = new System.Drawing.Font("Nirmala UI Semilight", 11F);
-            this.TxtMinuteStudy.Location = new System.Drawing.Point(219, 562);
-            this.TxtMinuteStudy.Name = "TxtMinuteStudy";
-            this.TxtMinuteStudy.Size = new System.Drawing.Size(81, 32);
-            this.TxtMinuteStudy.TabIndex = 13;
-            this.TxtMinuteStudy.Visible = false;
-            // 
-            // TxtHourRest
-            // 
-            this.TxtHourRest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TxtHourRest.Font = new System.Drawing.Font("Nirmala UI Semilight", 11F);
-            this.TxtHourRest.Location = new System.Drawing.Point(447, 562);
-            this.TxtHourRest.Name = "TxtHourRest";
-            this.TxtHourRest.Size = new System.Drawing.Size(81, 32);
-            this.TxtHourRest.TabIndex = 14;
-            this.TxtHourRest.Visible = false;
-            // 
-            // TxtMinuteRest
-            // 
-            this.TxtMinuteRest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TxtMinuteRest.Font = new System.Drawing.Font("Nirmala UI Semilight", 11F);
-            this.TxtMinuteRest.Location = new System.Drawing.Point(556, 562);
-            this.TxtMinuteRest.Name = "TxtMinuteRest";
-            this.TxtMinuteRest.Size = new System.Drawing.Size(81, 32);
-            this.TxtMinuteRest.TabIndex = 15;
-            this.TxtMinuteRest.Visible = false;
-            // 
-            // BtnApply
-            // 
-            this.BtnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BtnApply.BackColor = System.Drawing.Color.Transparent;
-            this.BtnApply.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(93)))), ((int)(((byte)(130)))));
-            this.BtnApply.FlatAppearance.BorderSize = 2;
-            this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnApply.Font = new System.Drawing.Font("Nirmala UI Semilight", 8F);
-            this.BtnApply.Location = new System.Drawing.Point(331, 613);
-            this.BtnApply.Name = "BtnApply";
-            this.BtnApply.Size = new System.Drawing.Size(85, 35);
-            this.BtnApply.TabIndex = 16;
-            this.BtnApply.Text = "Apply";
-            this.BtnApply.UseVisualStyleBackColor = false;
-            this.BtnApply.Visible = false;
-            this.BtnApply.Click += new System.EventHandler(this.BtnApply_Click);
-            // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.BtnApply);
-            this.Controls.Add(this.TxtMinuteRest);
-            this.Controls.Add(this.TxtHourRest);
-            this.Controls.Add(this.TxtMinuteStudy);
-            this.Controls.Add(this.TxtHourStudy);
-            this.Controls.Add(this.LblRest);
-            this.Controls.Add(this.LblStudy);
             this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.BtnConfig);
             this.Controls.Add(this.BtnStart);
@@ -245,10 +148,6 @@
             this.Name = "Pomodoro";
             this.Size = new System.Drawing.Size(750, 680);
             this.Load += new System.EventHandler(this.Pomodoro_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.TxtHourStudy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMinuteStudy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtHourRest)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtMinuteRest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,12 +161,5 @@
         private CircularProgressBar.CircularProgressBar TimerBar;
         private System.Windows.Forms.Button BtnConfig;
         private System.Windows.Forms.Button BtnStop;
-        private System.Windows.Forms.Label LblStudy;
-        private System.Windows.Forms.Label LblRest;
-        private System.Windows.Forms.NumericUpDown TxtHourStudy;
-        private System.Windows.Forms.NumericUpDown TxtMinuteStudy;
-        private System.Windows.Forms.NumericUpDown TxtHourRest;
-        private System.Windows.Forms.NumericUpDown TxtMinuteRest;
-        private System.Windows.Forms.Button BtnApply;
     }
 }

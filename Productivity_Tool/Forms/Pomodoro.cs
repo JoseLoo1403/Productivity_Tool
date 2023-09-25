@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Data.Repositories;
+using Data.Entities;
 using Productivity_Tool.Helpers;
 
 namespace Productivity_Tool.Forms
@@ -27,6 +30,23 @@ namespace Productivity_Tool.Forms
             BarTime = new TimerObj(0,0);
         }
 
+        private void LoadStudyConfigurations()
+        {
+            ConfigurationRepository repo = new ConfigurationRepository();
+
+            int[] temp = repo.GetConfigurationValueByName("Study Time");
+
+            StudyTime.Hour = temp[0];
+            StudyTime.Minute = temp[1];
+            StudyTime.Seconds = temp[2];
+
+            temp = repo.GetConfigurationValueByName("Rest Time");
+
+            RestTime.Hour = temp[0];
+            RestTime.Minute = temp[1];
+            RestTime.Seconds = temp[2];
+        }
+
         public Pomodoro()
         {
             InitializeComponent();
@@ -34,11 +54,12 @@ namespace Productivity_Tool.Forms
 
         private void Pomodoro_Load(object sender, EventArgs e)
         {
+            StudyTime = new TimerObj(0, 0);
+            RestTime = new TimerObj(0, 0);
             BarTime = new TimerObj(0,0);
             TimerBar.Value = 0;
 
-            StudyTime = new TimerObj(0,1);
-            RestTime = new TimerObj(0,1);
+            LoadStudyConfigurations();
 
             TimerBar.Maximum = StudyTime.GetTotalSeconds();
         }
@@ -77,7 +98,6 @@ namespace Productivity_Tool.Forms
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-
             if(BtnStop.Text == "Stop" && timer1.Enabled)
             {
                 timer1.Stop();
@@ -92,35 +112,6 @@ namespace Productivity_Tool.Forms
         }
 
         private void BtnConfig_Click(object sender, EventArgs e)
-        {
-
-            if(LblStudy.Visible == true)
-            {
-                LblStudy.Visible = false;
-                TxtHourStudy.Visible = false;
-                TxtMinuteStudy.Visible = false;
-
-                LblRest.Visible = false;
-                TxtHourRest.Visible = false;
-                TxtMinuteRest.Visible = false;
-
-                BtnApply.Visible = false;
-            }
-            else
-            {
-                LblStudy.Visible = true;
-                TxtHourStudy.Visible = true;
-                TxtMinuteStudy.Visible = true;
-
-                LblRest.Visible = true;
-                TxtHourRest.Visible = true;
-                TxtMinuteRest.Visible = true;
-
-                BtnApply.Visible = true;
-            }
-        }
-
-        private void BtnApply_Click(object sender, EventArgs e)
         {
 
         }

@@ -37,7 +37,7 @@ namespace Productivity_Tool.Forms
             BarTime = new TimerObj(0,0);
             TimerBar.Value = 0;
 
-            StudyTime = new TimerObj(0,2);
+            StudyTime = new TimerObj(0,1);
             RestTime = new TimerObj(0,1);
 
             TimerBar.Maximum = StudyTime.GetTotalSeconds();

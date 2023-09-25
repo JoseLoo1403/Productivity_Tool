@@ -216,7 +216,7 @@
             this.BtnApply.FlatAppearance.BorderSize = 2;
             this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnApply.Font = new System.Drawing.Font("Nirmala UI Semilight", 8F);
-            this.BtnApply.Location = new System.Drawing.Point(332, 621);
+            this.BtnApply.Location = new System.Drawing.Point(331, 613);
             this.BtnApply.Name = "BtnApply";
             this.BtnApply.Size = new System.Drawing.Size(85, 35);
             this.BtnApply.TabIndex = 16;

@@ -20,6 +20,12 @@ namespace Productivity_Tool.Forms
         TimerObj StudyTime;
         TimerObj RestTime;
         int Mode = 0;  // 0 = study    1 = rest
+        bool WaitSecond;
+        string Message;
+        int StrIndex;
+
+        int CurrentSessionCount = 0;
+        int GoalCount = 3;
 
         private void ReloadTimer()
         {
@@ -30,9 +36,17 @@ namespace Productivity_Tool.Forms
             BarTime = new TimerObj(0,0);
         }
 
+        private void RefreshCounter()
+        {
+            LblSessionCount.Text = $"{CurrentSessionCount}/{GoalCount}";
+        }
+
         private void SendMessage(string text)
         {
-            LblMessage.Text = text;
+            Message = text;
+            LblMessage.Text = string.Empty;
+            StrIndex = 0;
+            AnimationTimer.Start();
         }
 
         private void LoadStudyConfigurations()
@@ -72,11 +86,23 @@ namespace Productivity_Tool.Forms
             LoadStudyConfigurations();
 
             TimerBar.Maximum = StudyTime.GetTotalSeconds();
+            WaitSecond = false;
+
+            RefreshCounter();
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
             timer1.Start();
+
+            if(CurrentSessionCount >= GoalCount)
+            {
+                BtnStop.Enabled = true;
+                BtnStart.Text = "Start";
+                CurrentSessionCount = 0;
+                RefreshCounter();
+            }
+
             if(BtnStop.Text == "Restart")
             {
                 BtnStop.Text = "Stop";
@@ -94,27 +120,59 @@ namespace Productivity_Tool.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            TimerBar.Value += 1;
-            TimerBar.Text = BarTime.AddTime();
+
+            if (!WaitSecond)
+            {
+                TimerBar.Value += 1;
+                TimerBar.Text = BarTime.AddTime();
+            }
             
             if(Mode == 0 )
             {
-                if (BarTime.Hour == StudyTime.Hour && BarTime.Minute == StudyTime.Minute && BarTime.Seconds == StudyTime.Seconds)
+                if (TimerBar.Value == TimerBar.Maximum)
                 {
-                    Mode = 1;
-                    TimerBar.Maximum = RestTime.GetTotalSeconds();
-                    ReloadTimer();
-                    SendMessage("Rest...");
+                    if(WaitSecond)
+                    {
+                        Mode = 1;
+                        TimerBar.Maximum = RestTime.GetTotalSeconds();
+                        ReloadTimer();
+                        SendMessage("Rest...");
+                        WaitSecond = false;
+                    }
+                    else
+                    {
+                        CurrentSessionCount++;
+                        RefreshCounter();
+
+
+                        if (CurrentSessionCount == GoalCount)
+                        {
+                            timer1.Stop();
+                            SendMessage($"Congratulations! You reach your goal! Sessions {CurrentSessionCount}/{GoalCount}");
+                            BtnStop.Enabled = false;
+                            BtnStart.Text = "Restart sessions";
+                        }
+
+                        WaitSecond = true;
+                    }
                 }
             }
             else if (Mode == 1)
             {
-                if (BarTime.Hour == RestTime.Hour && BarTime.Minute == RestTime.Minute && BarTime.Seconds == RestTime.Seconds)
+                if (TimerBar.Value == TimerBar.Maximum)
                 {
-                    Mode = 0;
-                    TimerBar.Maximum = StudyTime.GetTotalSeconds();
-                    ReloadTimer();
-                    SendMessage("Study...");
+                    if(WaitSecond)
+                    {
+                        Mode = 0;
+                        TimerBar.Maximum = StudyTime.GetTotalSeconds();
+                        ReloadTimer();
+                        SendMessage("Study...");
+                        WaitSecond = false;
+                    }
+                    else
+                    {
+                        WaitSecond= true;
+                    }
                 }
             }
         }
@@ -137,6 +195,19 @@ namespace Productivity_Tool.Forms
         private void BtnConfig_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AnimationTimer_Tick(object sender, EventArgs e)
+        {
+            if (StrIndex < Message.Length)
+            {
+                LblMessage.Text += Message[StrIndex];
+                StrIndex++;
+            }
+            else
+            {
+                AnimationTimer.Stop();
+            }
         }
     }
 }

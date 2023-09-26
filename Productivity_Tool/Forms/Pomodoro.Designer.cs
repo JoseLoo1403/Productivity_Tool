@@ -39,6 +39,8 @@
             this.LblStudyInfo = new System.Windows.Forms.Label();
             this.LblRestInfo = new System.Windows.Forms.Label();
             this.LblMessage = new System.Windows.Forms.Label();
+            this.AnimationTimer = new System.Windows.Forms.Timer(this.components);
+            this.LblSessionCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -162,21 +164,39 @@
             // 
             // LblMessage
             // 
-            this.LblMessage.AutoSize = true;
+            this.LblMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblMessage.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.LblMessage.Location = new System.Drawing.Point(335, 463);
+            this.LblMessage.Location = new System.Drawing.Point(126, 463);
             this.LblMessage.Name = "LblMessage";
-            this.LblMessage.Size = new System.Drawing.Size(48, 25);
+            this.LblMessage.Size = new System.Drawing.Size(466, 25);
             this.LblMessage.TabIndex = 8;
             this.LblMessage.Text = "label";
             this.LblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // AnimationTimer
+            // 
+            this.AnimationTimer.Interval = 180;
+            this.AnimationTimer.Tick += new System.EventHandler(this.AnimationTimer_Tick);
+            // 
+            // LblSessionCount
+            // 
+            this.LblSessionCount.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LblSessionCount.AutoSize = true;
+            this.LblSessionCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblSessionCount.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.8F);
+            this.LblSessionCount.Location = new System.Drawing.Point(348, 329);
+            this.LblSessionCount.Name = "LblSessionCount";
+            this.LblSessionCount.Size = new System.Drawing.Size(34, 23);
+            this.LblSessionCount.TabIndex = 9;
+            this.LblSessionCount.Text = "0/3";
             // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.LblSessionCount);
             this.Controls.Add(this.LblMessage);
             this.Controls.Add(this.LblRestInfo);
             this.Controls.Add(this.LblStudyInfo);
@@ -204,5 +224,7 @@
         private System.Windows.Forms.Label LblStudyInfo;
         private System.Windows.Forms.Label LblRestInfo;
         private System.Windows.Forms.Label LblMessage;
+        private System.Windows.Forms.Timer AnimationTimer;
+        private System.Windows.Forms.Label LblSessionCount;
     }
 }

@@ -13,6 +13,11 @@ namespace Productivity_Tool.Helpers
         public int Minute { get; set; }
         public int Seconds { get; set; }
 
+
+        public string GetTimeFormat()
+        {
+            return $"{Hour.ToString("D2")}:{Minute.ToString("D2")}:{Seconds.ToString("D2")}";
+        }
         public string AddTime()
         {
             if (Seconds < 59)
@@ -30,7 +35,7 @@ namespace Productivity_Tool.Helpers
                 Minute++;
             }
 
-            return $"{Hour.ToString("D2")}:{Minute.ToString("D2")}:{Seconds.ToString("D2")}";
+            return GetTimeFormat();
         }
         public int GetTotalSeconds()
         {

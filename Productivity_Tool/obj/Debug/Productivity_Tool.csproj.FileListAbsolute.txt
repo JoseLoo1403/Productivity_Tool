@@ -21,3 +21,4 @@ C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_To
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Data.pdb
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\System.Data.SQLite.xml
 C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\bin\Debug\Dapper.xml
+C:\Users\Jose Loo\Desktop\Productivity\Project\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Configuration.resources

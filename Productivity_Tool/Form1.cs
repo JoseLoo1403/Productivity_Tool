@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Productivity_Tool.Forms;
 
@@ -29,7 +23,7 @@ namespace Productivity_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Pomodoro m = new Pomodoro();
+            Main m = new Main();
             m.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.Add(m);
             m.Show();
@@ -56,6 +50,15 @@ namespace Productivity_Tool
             Button btn = sender as Button;
 
             btn.BackColor = Color.FromArgb(8, 65, 92);
+        }
+
+        private void BtnConfiguration_Click(object sender, EventArgs e)
+        {
+            Configuration f = new Configuration();
+            f.Dock = DockStyle.Fill;
+            this.MainDisplayPN.Controls.RemoveAt(0);
+            this.MainDisplayPN.Controls.Add(f);
+            f.Show();
         }
     }
 }

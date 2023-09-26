@@ -30,6 +30,11 @@ namespace Productivity_Tool.Forms
             BarTime = new TimerObj(0,0);
         }
 
+        private void SendMessage(string text)
+        {
+            LblMessage.Text = text;
+        }
+
         private void LoadStudyConfigurations()
         {
             ConfigurationRepository repo = new ConfigurationRepository();
@@ -45,6 +50,11 @@ namespace Productivity_Tool.Forms
             RestTime.Hour = temp[0];
             RestTime.Minute = temp[1];
             RestTime.Seconds = temp[2];
+
+            LblStudyInfo.Text = $"Study time {StudyTime.GetTimeFormat()}";
+            LblRestInfo.Text = $"Rest Time {RestTime.GetTimeFormat()}";
+
+            SendMessage("Lets study!");
         }
 
         public Pomodoro()
@@ -71,27 +81,40 @@ namespace Productivity_Tool.Forms
             {
                 BtnStop.Text = "Stop";
             }
+
+            if(Mode == 0)
+            {
+                SendMessage("Study...");
+            }
+            else
+            {
+                SendMessage("Rest...");
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             TimerBar.Value += 1;
             TimerBar.Text = BarTime.AddTime();
-
+            
             if(Mode == 0 )
             {
-                if (BarTime.Hour == StudyTime.Hour && BarTime.Minute == StudyTime.Minute)
+                if (BarTime.Hour == StudyTime.Hour && BarTime.Minute == StudyTime.Minute && BarTime.Seconds == StudyTime.Seconds)
                 {
-                    TimerBar.Maximum = StudyTime.GetTotalSeconds();
+                    Mode = 1;
+                    TimerBar.Maximum = RestTime.GetTotalSeconds();
                     ReloadTimer();
+                    SendMessage("Rest...");
                 }
             }
             else if (Mode == 1)
             {
-                if (BarTime.Hour == RestTime.Hour && BarTime.Minute == RestTime.Minute)
+                if (BarTime.Hour == RestTime.Hour && BarTime.Minute == RestTime.Minute && BarTime.Seconds == RestTime.Seconds)
                 {
-                    TimerBar.Maximum = RestTime.GetTotalSeconds();
+                    Mode = 0;
+                    TimerBar.Maximum = StudyTime.GetTotalSeconds();
                     ReloadTimer();
+                    SendMessage("Study...");
                 }
             }
         }

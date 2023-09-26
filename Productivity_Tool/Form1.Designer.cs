@@ -33,12 +33,14 @@
             this.BtnPomodoro = new System.Windows.Forms.Button();
             this.BtnMain = new System.Windows.Forms.Button();
             this.MainDisplayPN = new System.Windows.Forms.Panel();
+            this.BtnConfiguration = new System.Windows.Forms.Button();
             this.NavBarPN.SuspendLayout();
             this.SuspendLayout();
             // 
             // NavBarPN
             // 
             this.NavBarPN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(65)))), ((int)(((byte)(92)))));
+            this.NavBarPN.Controls.Add(this.BtnConfiguration);
             this.NavBarPN.Controls.Add(this.BtnPomodoro);
             this.NavBarPN.Controls.Add(this.BtnMain);
             this.NavBarPN.Dock = System.Windows.Forms.DockStyle.Left;
@@ -59,7 +61,7 @@
             this.BtnPomodoro.Name = "BtnPomodoro";
             this.BtnPomodoro.Size = new System.Drawing.Size(316, 49);
             this.BtnPomodoro.TabIndex = 1;
-            this.BtnPomodoro.Text = "Pomodoro";
+            this.BtnPomodoro.Text = "Pomodoro     ";
             this.BtnPomodoro.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnPomodoro.UseVisualStyleBackColor = false;
             this.BtnPomodoro.Click += new System.EventHandler(this.BtnPomodoro_Click);
@@ -78,7 +80,7 @@
             this.BtnMain.Name = "BtnMain";
             this.BtnMain.Size = new System.Drawing.Size(316, 49);
             this.BtnMain.TabIndex = 0;
-            this.BtnMain.Text = "Main        ";
+            this.BtnMain.Text = "Main              ";
             this.BtnMain.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnMain.UseVisualStyleBackColor = false;
             this.BtnMain.Click += new System.EventHandler(this.BtnMain_Click);
@@ -92,6 +94,23 @@
             this.MainDisplayPN.Name = "MainDisplayPN";
             this.MainDisplayPN.Size = new System.Drawing.Size(858, 664);
             this.MainDisplayPN.TabIndex = 2;
+            // 
+            // BtnConfiguration
+            // 
+            this.BtnConfiguration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnConfiguration.FlatAppearance.BorderSize = 0;
+            this.BtnConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConfiguration.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfiguration.ForeColor = System.Drawing.Color.White;
+            this.BtnConfiguration.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfiguration.Image")));
+            this.BtnConfiguration.Location = new System.Drawing.Point(0, 279);
+            this.BtnConfiguration.Name = "BtnConfiguration";
+            this.BtnConfiguration.Size = new System.Drawing.Size(316, 49);
+            this.BtnConfiguration.TabIndex = 2;
+            this.BtnConfiguration.Text = "Configuration";
+            this.BtnConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnConfiguration.UseVisualStyleBackColor = false;
+            this.BtnConfiguration.Click += new System.EventHandler(this.BtnConfiguration_Click);
             // 
             // Form1
             // 
@@ -116,6 +135,7 @@
         private System.Windows.Forms.Button BtnPomodoro;
         private System.Windows.Forms.Button BtnMain;
         private System.Windows.Forms.Panel MainDisplayPN;
+        private System.Windows.Forms.Button BtnConfiguration;
     }
 }
 

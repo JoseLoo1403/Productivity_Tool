@@ -36,6 +36,9 @@
             this.TimerBar = new CircularProgressBar.CircularProgressBar();
             this.BtnConfig = new System.Windows.Forms.Button();
             this.BtnStop = new System.Windows.Forms.Button();
+            this.LblStudyInfo = new System.Windows.Forms.Label();
+            this.LblRestInfo = new System.Windows.Forms.Label();
+            this.LblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +59,7 @@
             this.BtnStart.FlatAppearance.BorderSize = 2;
             this.BtnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStart.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.BtnStart.Location = new System.Drawing.Point(142, 373);
+            this.BtnStart.Location = new System.Drawing.Point(130, 518);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(199, 59);
             this.BtnStart.TabIndex = 2;
@@ -80,7 +83,7 @@
             this.TimerBar.InnerColor = System.Drawing.Color.Transparent;
             this.TimerBar.InnerMargin = 2;
             this.TimerBar.InnerWidth = -1;
-            this.TimerBar.Location = new System.Drawing.Point(219, 72);
+            this.TimerBar.Location = new System.Drawing.Point(223, 164);
             this.TimerBar.MarqueeAnimationSpeed = 2000;
             this.TimerBar.Name = "TimerBar";
             this.TimerBar.OuterColor = System.Drawing.Color.Gray;
@@ -112,7 +115,7 @@
             this.BtnConfig.FlatAppearance.BorderSize = 0;
             this.BtnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfig.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfig.Image")));
-            this.BtnConfig.Location = new System.Drawing.Point(352, 438);
+            this.BtnConfig.Location = new System.Drawing.Point(340, 583);
             this.BtnConfig.Name = "BtnConfig";
             this.BtnConfig.Size = new System.Drawing.Size(42, 36);
             this.BtnConfig.TabIndex = 4;
@@ -127,7 +130,7 @@
             this.BtnStop.FlatAppearance.BorderSize = 2;
             this.BtnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStop.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.BtnStop.Location = new System.Drawing.Point(405, 373);
+            this.BtnStop.Location = new System.Drawing.Point(393, 518);
             this.BtnStop.Name = "BtnStop";
             this.BtnStop.Size = new System.Drawing.Size(199, 59);
             this.BtnStop.TabIndex = 5;
@@ -135,11 +138,48 @@
             this.BtnStop.UseVisualStyleBackColor = false;
             this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
             // 
+            // LblStudyInfo
+            // 
+            this.LblStudyInfo.AutoSize = true;
+            this.LblStudyInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblStudyInfo.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
+            this.LblStudyInfo.Location = new System.Drawing.Point(334, 20);
+            this.LblStudyInfo.Name = "LblStudyInfo";
+            this.LblStudyInfo.Size = new System.Drawing.Size(48, 25);
+            this.LblStudyInfo.TabIndex = 6;
+            this.LblStudyInfo.Text = "label";
+            // 
+            // LblRestInfo
+            // 
+            this.LblRestInfo.AutoSize = true;
+            this.LblRestInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblRestInfo.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
+            this.LblRestInfo.Location = new System.Drawing.Point(544, 20);
+            this.LblRestInfo.Name = "LblRestInfo";
+            this.LblRestInfo.Size = new System.Drawing.Size(48, 25);
+            this.LblRestInfo.TabIndex = 7;
+            this.LblRestInfo.Text = "label";
+            // 
+            // LblMessage
+            // 
+            this.LblMessage.AutoSize = true;
+            this.LblMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LblMessage.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
+            this.LblMessage.Location = new System.Drawing.Point(335, 463);
+            this.LblMessage.Name = "LblMessage";
+            this.LblMessage.Size = new System.Drawing.Size(48, 25);
+            this.LblMessage.TabIndex = 8;
+            this.LblMessage.Text = "label";
+            this.LblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.LblMessage);
+            this.Controls.Add(this.LblRestInfo);
+            this.Controls.Add(this.LblStudyInfo);
             this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.BtnConfig);
             this.Controls.Add(this.BtnStart);
@@ -161,5 +201,8 @@
         private CircularProgressBar.CircularProgressBar TimerBar;
         private System.Windows.Forms.Button BtnConfig;
         private System.Windows.Forms.Button BtnStop;
+        private System.Windows.Forms.Label LblStudyInfo;
+        private System.Windows.Forms.Label LblRestInfo;
+        private System.Windows.Forms.Label LblMessage;
     }
 }

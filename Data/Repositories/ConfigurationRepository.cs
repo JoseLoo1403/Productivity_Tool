@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,14 @@ namespace Data.Repositories
                 }
 
                 return res;
+            }
+        }
+
+        public void UpdateByNameConfigurations(string Name, string Value)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
+            {
+                cnn.Execute($"update Configurations set Value = '{Value}' WHERE Name = '{Name}'");
             }
         }
     }

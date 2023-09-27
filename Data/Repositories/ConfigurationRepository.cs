@@ -14,7 +14,7 @@ namespace Data.Repositories
 {
     public class ConfigurationRepository
     {
-        public int[] GetConfigurationValueByName(string Name)
+        public int[] GetConfigurationTimeByName(string Name)
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
             {
@@ -37,11 +37,23 @@ namespace Data.Repositories
             }
         }
 
-        public void UpdateByNameConfigurations(string Name, string Value)
+        public void UpdateConfigurationByName(string Name, string Value)
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
             {
                 cnn.Execute($"update Configurations set Value = '{Value}' WHERE Name = '{Name}'");
+            }
+        }
+
+        public string GetConfigurationValueByName(string Name)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
+            {
+                var output = cnn.Query<Configurations>($"select Id,Name,Value from Configurations where Name = '{Name}'",new DynamicParameters());
+
+                output.ToList();
+
+                return output.FirstOrDefault().Value;
             }
         }
     }

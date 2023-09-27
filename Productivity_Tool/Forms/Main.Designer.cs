@@ -35,11 +35,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 63);
+            this.label1.Location = new System.Drawing.Point(305, 352);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(109, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Main View";
+            this.label1.Text = "Work in progress";
             // 
             // Main
             // 
@@ -47,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Name = "Main";
-            this.Size = new System.Drawing.Size(686, 561);
+            this.Size = new System.Drawing.Size(750, 700);
             this.ResumeLayout(false);
             this.PerformLayout();
 

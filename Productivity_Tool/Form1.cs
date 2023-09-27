@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Productivity_Tool.Forms;
+using Data.Repositories;
 
 namespace Productivity_Tool
 {
@@ -10,6 +11,13 @@ namespace Productivity_Tool
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void MakeTodaySession()
+        {
+            StudySessionsRepository repo = new StudySessionsRepository();
+
+            repo.CreatSessionIfApplies();
         }
 
         private void BtnMain_Click(object sender, EventArgs e)
@@ -27,6 +35,8 @@ namespace Productivity_Tool
             m.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.Add(m);
             m.Show();
+
+            MakeTodaySession();
         }
 
         private void BtnPomodoro_Click(object sender, EventArgs e)

@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.NavBarPN = new System.Windows.Forms.Panel();
+            this.BtnConfiguration = new System.Windows.Forms.Button();
             this.BtnPomodoro = new System.Windows.Forms.Button();
             this.BtnMain = new System.Windows.Forms.Button();
             this.MainDisplayPN = new System.Windows.Forms.Panel();
-            this.BtnConfiguration = new System.Windows.Forms.Button();
             this.NavBarPN.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +46,25 @@
             this.NavBarPN.Dock = System.Windows.Forms.DockStyle.Left;
             this.NavBarPN.Location = new System.Drawing.Point(0, 0);
             this.NavBarPN.Name = "NavBarPN";
-            this.NavBarPN.Size = new System.Drawing.Size(316, 664);
+            this.NavBarPN.Size = new System.Drawing.Size(275, 723);
             this.NavBarPN.TabIndex = 1;
+            // 
+            // BtnConfiguration
+            // 
+            this.BtnConfiguration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnConfiguration.FlatAppearance.BorderSize = 0;
+            this.BtnConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConfiguration.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnConfiguration.ForeColor = System.Drawing.Color.White;
+            this.BtnConfiguration.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfiguration.Image")));
+            this.BtnConfiguration.Location = new System.Drawing.Point(0, 308);
+            this.BtnConfiguration.Name = "BtnConfiguration";
+            this.BtnConfiguration.Size = new System.Drawing.Size(275, 49);
+            this.BtnConfiguration.TabIndex = 2;
+            this.BtnConfiguration.Text = "Configuration";
+            this.BtnConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnConfiguration.UseVisualStyleBackColor = false;
+            this.BtnConfiguration.Click += new System.EventHandler(this.BtnConfiguration_Click);
             // 
             // BtnPomodoro
             // 
@@ -57,9 +74,9 @@
             this.BtnPomodoro.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPomodoro.ForeColor = System.Drawing.Color.White;
             this.BtnPomodoro.Image = ((System.Drawing.Image)(resources.GetObject("BtnPomodoro.Image")));
-            this.BtnPomodoro.Location = new System.Drawing.Point(0, 224);
+            this.BtnPomodoro.Location = new System.Drawing.Point(0, 253);
             this.BtnPomodoro.Name = "BtnPomodoro";
-            this.BtnPomodoro.Size = new System.Drawing.Size(316, 49);
+            this.BtnPomodoro.Size = new System.Drawing.Size(275, 49);
             this.BtnPomodoro.TabIndex = 1;
             this.BtnPomodoro.Text = "Pomodoro     ";
             this.BtnPomodoro.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -76,9 +93,9 @@
             this.BtnMain.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.BtnMain.ForeColor = System.Drawing.Color.White;
             this.BtnMain.Image = ((System.Drawing.Image)(resources.GetObject("BtnMain.Image")));
-            this.BtnMain.Location = new System.Drawing.Point(0, 176);
+            this.BtnMain.Location = new System.Drawing.Point(0, 205);
             this.BtnMain.Name = "BtnMain";
-            this.BtnMain.Size = new System.Drawing.Size(316, 49);
+            this.BtnMain.Size = new System.Drawing.Size(275, 49);
             this.BtnMain.TabIndex = 0;
             this.BtnMain.Text = "Main              ";
             this.BtnMain.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -90,34 +107,17 @@
             // MainDisplayPN
             // 
             this.MainDisplayPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainDisplayPN.Location = new System.Drawing.Point(316, 0);
+            this.MainDisplayPN.Location = new System.Drawing.Point(275, 0);
             this.MainDisplayPN.Name = "MainDisplayPN";
-            this.MainDisplayPN.Size = new System.Drawing.Size(858, 664);
+            this.MainDisplayPN.Size = new System.Drawing.Size(787, 723);
             this.MainDisplayPN.TabIndex = 2;
-            // 
-            // BtnConfiguration
-            // 
-            this.BtnConfiguration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnConfiguration.FlatAppearance.BorderSize = 0;
-            this.BtnConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConfiguration.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnConfiguration.ForeColor = System.Drawing.Color.White;
-            this.BtnConfiguration.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfiguration.Image")));
-            this.BtnConfiguration.Location = new System.Drawing.Point(0, 279);
-            this.BtnConfiguration.Name = "BtnConfiguration";
-            this.BtnConfiguration.Size = new System.Drawing.Size(316, 49);
-            this.BtnConfiguration.TabIndex = 2;
-            this.BtnConfiguration.Text = "Configuration";
-            this.BtnConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BtnConfiguration.UseVisualStyleBackColor = false;
-            this.BtnConfiguration.Click += new System.EventHandler(this.BtnConfiguration_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1174, 664);
+            this.ClientSize = new System.Drawing.Size(1062, 723);
             this.Controls.Add(this.MainDisplayPN);
             this.Controls.Add(this.NavBarPN);
             this.ForeColor = System.Drawing.SystemColors.ControlText;

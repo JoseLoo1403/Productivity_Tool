@@ -49,17 +49,24 @@ namespace Productivity_Tool.Forms
             AnimationTimer.Start();
         }
 
+        private void SaveStudyTime()
+        {
+            StudySessionsRepository repo = new StudySessionsRepository();
+
+            repo.AddTimeToSession(DateTime.Today.ToString("yyyy/MM/dd"), StudyTime.Hour, StudyTime.Minute, StudyTime.Seconds);
+        }
+
         private void LoadStudyConfigurations()
         {
             ConfigurationRepository repo = new ConfigurationRepository();
 
-            int[] temp = repo.GetConfigurationValueByName("Study Time");
+            int[] temp = repo.GetConfigurationTimeByName("Study Time");
 
             StudyTime.Hour = temp[0];
             StudyTime.Minute = temp[1];
             StudyTime.Seconds = temp[2];
 
-            temp = repo.GetConfigurationValueByName("Rest Time");
+            temp = repo.GetConfigurationTimeByName("Rest Time");
 
             RestTime.Hour = temp[0];
             RestTime.Minute = temp[1];
@@ -67,6 +74,10 @@ namespace Productivity_Tool.Forms
 
             LblStudyInfo.Text = $"Study time {StudyTime.GetTimeFormat()}";
             LblRestInfo.Text = $"Rest Time {RestTime.GetTimeFormat()}";
+
+
+            GoalCount = Convert.ToInt32(repo.GetConfigurationValueByName("Session Goal"));
+            CurrentSessionCount = Convert.ToInt32(repo.GetConfigurationValueByName("Current count"));
 
             SendMessage("Lets study!");
         }
@@ -100,7 +111,13 @@ namespace Productivity_Tool.Forms
                 BtnStop.Enabled = true;
                 BtnStart.Text = "Start";
                 CurrentSessionCount = 0;
+
+                ConfigurationRepository repo = new ConfigurationRepository();
+
+                repo.UpdateConfigurationByName("Current count", "0");
+
                 RefreshCounter();
+                Mode = 0;
             }
 
             if(BtnStop.Text == "Restart")
@@ -136,7 +153,11 @@ namespace Productivity_Tool.Forms
                         Mode = 1;
                         TimerBar.Maximum = RestTime.GetTotalSeconds();
                         ReloadTimer();
+                        SaveStudyTime();
                         SendMessage("Rest...");
+
+                        TimerBar.ProgressColor = Color.FromArgb(26, 117, 255);
+
                         WaitSecond = false;
                     }
                     else
@@ -148,9 +169,10 @@ namespace Productivity_Tool.Forms
                         if (CurrentSessionCount == GoalCount)
                         {
                             timer1.Stop();
-                            SendMessage($"Congratulations! You reach your goal! Sessions {CurrentSessionCount}/{GoalCount}");
+                            SendMessage($"Sessions Completed {CurrentSessionCount}/{GoalCount}");
                             BtnStop.Enabled = false;
                             BtnStart.Text = "Restart sessions";
+                            SaveStudyTime();
                         }
 
                         WaitSecond = true;
@@ -166,12 +188,15 @@ namespace Productivity_Tool.Forms
                         Mode = 0;
                         TimerBar.Maximum = StudyTime.GetTotalSeconds();
                         ReloadTimer();
+
+                        TimerBar.ProgressColor = Color.FromArgb(255, 128, 0);
+
                         SendMessage("Study...");
                         WaitSecond = false;
                     }
                     else
                     {
-                        WaitSecond= true;
+                        WaitSecond = true;
                     }
                 }
             }
@@ -194,7 +219,16 @@ namespace Productivity_Tool.Forms
 
         private void BtnConfig_Click(object sender, EventArgs e)
         {
-
+            if (LblStudyInfo.Visible == true)
+            {
+                LblStudyInfo.Visible = false;
+                LblRestInfo.Visible = false;
+            }
+            else
+            {
+                LblStudyInfo.Visible = true;
+                LblRestInfo.Visible = true;
+            }
         }
 
         private void AnimationTimer_Tick(object sender, EventArgs e)

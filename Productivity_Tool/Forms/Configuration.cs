@@ -24,20 +24,20 @@ namespace Productivity_Tool.Forms
         {
             ConfigurationRepository repo = new ConfigurationRepository();
 
-            repo.UpdateByNameConfigurations(Name, Value);
+            repo.UpdateConfigurationByName(Name, Value);
         }
 
         private void LoadConfiguration()
         {
             ConfigurationRepository repository = new ConfigurationRepository();
 
-            int[] Times = repository.GetConfigurationValueByName("Study Time");
+            int[] Times = repository.GetConfigurationTimeByName("Study Time");
 
             TxtStudyHour.Value = Times[0];
             TxtStudyMinute.Value = Times[1];
             TxtStudySecond.Value = Times[2];
 
-            Times = repository.GetConfigurationValueByName("Rest Time");
+            Times = repository.GetConfigurationTimeByName("Rest Time");
 
             TxtRestHour.Value = Times[0];
             TxtRestMinute.Value = Times[1];

@@ -17,7 +17,7 @@ namespace Productivity_Tool
         {
             StudySessionsRepository repo = new StudySessionsRepository();
 
-            repo.CreatSessionIfApplies();
+            repo.CreateSessionIfApplies();
         }
 
         private void BtnMain_Click(object sender, EventArgs e)

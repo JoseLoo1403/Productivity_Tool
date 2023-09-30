@@ -54,7 +54,7 @@ namespace Data.Repositories
         }
 
 
-        public void CreatSessionIfApplies()
+        public void CreateSessionIfApplies()
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
             {
@@ -66,6 +66,16 @@ namespace Data.Repositories
                 }
 
                 cnn.Execute($"insert into StudySessions values ('{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0')");
+            }
+        }
+
+        public List<StudySessions> GetAllStudySessions()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString())) 
+            {
+                var output = cnn.Query<StudySessions>("select Date,Time from StudySessions", new DynamicParameters());
+
+                return output.ToList();
             }
         }
     }

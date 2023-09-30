@@ -54,6 +54,10 @@ namespace Productivity_Tool.Forms
             StudySessionsRepository repo = new StudySessionsRepository();
 
             repo.AddTimeToSession(DateTime.Today.ToString("yyyy/MM/dd"), StudyTime.Hour, StudyTime.Minute, StudyTime.Seconds);
+
+            ConfigurationRepository con = new ConfigurationRepository();
+
+            con.UpdateConfigurationByName("Current count", CurrentSessionCount.ToString());
         }
 
         private void LoadStudyConfigurations()

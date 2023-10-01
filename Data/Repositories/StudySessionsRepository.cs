@@ -66,6 +66,7 @@ namespace Data.Repositories
                 }
 
                 cnn.Execute($"insert into StudySessions values ('{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0')");
+                cnn.Execute("update Configurations set Value = '0' where Name = 'Current count'");
             }
         }
 
@@ -76,6 +77,16 @@ namespace Data.Repositories
                 var output = cnn.Query<StudySessions>("select Date,Time from StudySessions", new DynamicParameters());
 
                 return output.ToList();
+            }
+        }
+
+        public StudySessions GetStudySessionByDate(string date)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
+            {
+                var output = cnn.Query<StudySessions>($"select Date,Time from StudySessions where Date = '{date}'", new DynamicParameters());
+
+                return output.ToList().FirstOrDefault();
             }
         }
     }

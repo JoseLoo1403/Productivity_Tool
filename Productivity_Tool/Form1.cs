@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using Productivity_Tool.Forms;
 using Data.Repositories;
+using Data.Entities;
+using System.Linq;
 
 namespace Productivity_Tool
 {
@@ -16,6 +18,27 @@ namespace Productivity_Tool
         private void MakeTodaySession()
         {
             StudySessionsRepository repo = new StudySessionsRepository();
+            ConfigurationRepository config = new ConfigurationRepository();
+
+            if (config.GetConfigurationValueByName("Streak Update") != DateTime.Now.ToString("yyyy/MM/dd"))
+            {
+                DateTime now = DateTime.Now;
+                now = now.AddDays(-1);
+
+                StudySessions yesturday = repo.GetStudySessionByDate(now.ToString("yyyy/MM/dd"));
+
+                if (yesturday != null)
+                {
+                    config.AddDayStreak();
+                }
+                else
+                {
+                    config.UpdateConfigurationByName("Day Streak", "0");
+                }
+
+                config.UpdateConfigurationByName("Streak Update", DateTime.Now.ToString("yyyy/MM/dd"));
+            }
+
 
             repo.CreateSessionIfApplies();
         }

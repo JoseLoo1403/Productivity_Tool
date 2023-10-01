@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SQLite;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
@@ -55,6 +56,16 @@ namespace Data.Repositories
 
                 return output.FirstOrDefault().Value;
             }
+        }
+
+        public void AddDayStreak()
+        {
+
+            int value = Convert.ToInt32(GetConfigurationValueByName("Day Streak"));
+
+            value++;
+
+            UpdateConfigurationByName("Day Streak",value.ToString());
         }
     }
 }

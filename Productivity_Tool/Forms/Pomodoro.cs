@@ -9,8 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data.Repositories;
-using Data.Entities;
 using Productivity_Tool.Helpers;
+using System.Media;
 
 namespace Productivity_Tool.Forms
 {
@@ -23,6 +23,7 @@ namespace Productivity_Tool.Forms
         bool WaitSecond;
         string Message;
         int StrIndex;
+        SoundPlayer sound;
 
         int CurrentSessionCount = 0;
         int GoalCount = 3;
@@ -104,17 +105,17 @@ namespace Productivity_Tool.Forms
             WaitSecond = false;
 
             RefreshCounter();
+            sound = new SoundPlayer(@".\Sound\Stop_Sound.wav");
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
-            timer1.Start();
-
-            if(CurrentSessionCount >= GoalCount)
+            if (CurrentSessionCount >= GoalCount)
             {
                 BtnStop.Enabled = true;
                 BtnStart.Text = "Start";
                 CurrentSessionCount = 0;
+                ReloadTimer();
 
                 ConfigurationRepository repo = new ConfigurationRepository();
 
@@ -124,12 +125,23 @@ namespace Productivity_Tool.Forms
                 Mode = 0;
             }
 
-            if(BtnStop.Text == "Restart")
+            timer1.Start();
+
+            if (BtnStop.Text == "Restart")
             {
                 BtnStop.Text = "Stop";
             }
 
-            if(Mode == 0)
+            if (BtnStart.Enabled == true)
+            {
+                BtnStart.Enabled = false;
+            }
+            else
+            {
+                BtnStart.Enabled = true;
+            }
+
+            if (Mode == 0)
             {
                 SendMessage("Study...");
             }
@@ -159,6 +171,7 @@ namespace Productivity_Tool.Forms
                         ReloadTimer();
                         SaveStudyTime();
                         SendMessage("Rest...");
+                        sound.Play();
 
                         TimerBar.ProgressColor = Color.FromArgb(26, 117, 255);
 
@@ -169,17 +182,18 @@ namespace Productivity_Tool.Forms
                         CurrentSessionCount++;
                         RefreshCounter();
 
+                        WaitSecond = true;
 
                         if (CurrentSessionCount == GoalCount)
                         {
                             timer1.Stop();
                             SendMessage($"Sessions Completed {CurrentSessionCount}/{GoalCount}");
                             BtnStop.Enabled = false;
+                            BtnStart.Enabled = true;
                             BtnStart.Text = "Restart sessions";
                             SaveStudyTime();
+                            WaitSecond = false;
                         }
-
-                        WaitSecond = true;
                     }
                 }
             }
@@ -212,6 +226,8 @@ namespace Productivity_Tool.Forms
             {
                 timer1.Stop();
                 BtnStop.Text = "Restart";
+                BtnStart.Enabled = true;
+                BtnStart.Text = "Continue";
             }
             else
             {

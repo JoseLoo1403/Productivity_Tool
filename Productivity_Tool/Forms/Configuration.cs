@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -42,6 +43,8 @@ namespace Productivity_Tool.Forms
             TxtRestHour.Value = Times[0];
             TxtRestMinute.Value = Times[1];
             TxtRestSecond.Value = Times[2];
+
+            TxtGoal.Value = Convert.ToInt16(repository.GetConfigurationValueByName("Session Goal"));
         }
 
         public Configuration()
@@ -56,6 +59,28 @@ namespace Productivity_Tool.Forms
 
         private void BtnApply_Click(object sender, EventArgs e)
         {
+            //Security
+            decimal StudySum = TxtStudyHour.Value + TxtStudyMinute.Value + TxtStudySecond.Value;
+            decimal RestSum = TxtRestHour.Value + TxtRestMinute.Value + TxtRestSecond.Value;
+
+            if(StudySum < 1)
+            {
+                MessageBox.Show("Please insert an amount of time in study time");
+                return;
+            }
+
+            if (RestSum < 1)
+            {
+                MessageBox.Show("Please insert an amount of time in rest time");
+                return;
+            }
+
+            if (TxtGoal.Value < 1)
+            {
+                MessageBox.Show("Please insert an amount of sets");
+                return;
+            }
+
             string StudyValue,RestValue = "";
 
             StudyValue = $"{TxtStudyHour.Value}:{TxtStudyMinute.Value}:{TxtStudySecond.Value}";
@@ -63,10 +88,26 @@ namespace Productivity_Tool.Forms
 
             UpdateConfiguration("Study Time",StudyValue);
             UpdateConfiguration("Rest Time", RestValue);
+            UpdateConfiguration("Session Goal", TxtGoal.Value.ToString());
 
             //CleanTextBoxes();
 
             MessageBox.Show("Update been made");
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtRestMinute_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

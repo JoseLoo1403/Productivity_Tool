@@ -34,12 +34,15 @@
             this.BtnPomodoro = new System.Windows.Forms.Button();
             this.BtnMain = new System.Windows.Forms.Button();
             this.MainDisplayPN = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NavBarPN.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NavBarPN
             // 
             this.NavBarPN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(65)))), ((int)(((byte)(92)))));
+            this.NavBarPN.Controls.Add(this.pictureBox1);
             this.NavBarPN.Controls.Add(this.BtnConfiguration);
             this.NavBarPN.Controls.Add(this.BtnPomodoro);
             this.NavBarPN.Controls.Add(this.BtnMain);
@@ -57,7 +60,7 @@
             this.BtnConfiguration.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfiguration.ForeColor = System.Drawing.Color.White;
             this.BtnConfiguration.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfiguration.Image")));
-            this.BtnConfiguration.Location = new System.Drawing.Point(0, 308);
+            this.BtnConfiguration.Location = new System.Drawing.Point(0, 354);
             this.BtnConfiguration.Name = "BtnConfiguration";
             this.BtnConfiguration.Size = new System.Drawing.Size(275, 49);
             this.BtnConfiguration.TabIndex = 2;
@@ -74,7 +77,7 @@
             this.BtnPomodoro.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPomodoro.ForeColor = System.Drawing.Color.White;
             this.BtnPomodoro.Image = ((System.Drawing.Image)(resources.GetObject("BtnPomodoro.Image")));
-            this.BtnPomodoro.Location = new System.Drawing.Point(0, 253);
+            this.BtnPomodoro.Location = new System.Drawing.Point(0, 299);
             this.BtnPomodoro.Name = "BtnPomodoro";
             this.BtnPomodoro.Size = new System.Drawing.Size(275, 49);
             this.BtnPomodoro.TabIndex = 1;
@@ -93,7 +96,7 @@
             this.BtnMain.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.BtnMain.ForeColor = System.Drawing.Color.White;
             this.BtnMain.Image = ((System.Drawing.Image)(resources.GetObject("BtnMain.Image")));
-            this.BtnMain.Location = new System.Drawing.Point(0, 205);
+            this.BtnMain.Location = new System.Drawing.Point(0, 251);
             this.BtnMain.Name = "BtnMain";
             this.BtnMain.Size = new System.Drawing.Size(275, 49);
             this.BtnMain.TabIndex = 0;
@@ -112,6 +115,18 @@
             this.MainDisplayPN.Size = new System.Drawing.Size(787, 723);
             this.MainDisplayPN.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(38, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -121,10 +136,14 @@
             this.Controls.Add(this.MainDisplayPN);
             this.Controls.Add(this.NavBarPN);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Study-Tool";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Pomodoro";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.NavBarPN.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +155,7 @@
         private System.Windows.Forms.Button BtnMain;
         private System.Windows.Forms.Panel MainDisplayPN;
         private System.Windows.Forms.Button BtnConfiguration;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -54,13 +54,28 @@ namespace Productivity_Tool.Forms
         {
             ConfigurationRepository repo = new ConfigurationRepository();
 
-            GoalBar.Maximum = Convert.ToInt32(repo.GetConfigurationValueByName("Session Goal"));
-            GoalBar.Value = Convert.ToInt32(repo.GetConfigurationValueByName("Current count"));
+            string Goal, Count;
+            Goal = repo.GetConfigurationValueByName("Session Goal");
+            Count = repo.GetConfigurationValueByName("Current count");
+
+
+            GoalBar.Maximum = Convert.ToInt32(Goal);
+            GoalBar.Value = Convert.ToInt32(Count);
+            GoalBar.Text = $"{Count}/{Goal}";
             GoalBar.Refresh();
         }
+
+        private void LoadDayStreak()
+        {
+            ConfigurationRepository repo = new ConfigurationRepository();
+
+            LblStreak.Text = "Day-Streak: " + repo.GetConfigurationValueByName("Day Streak");
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {
             LoadDataToChart();
+            LoadDayStreak();
             LoadGoal();
         }
     }

@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.LblStreak = new System.Windows.Forms.Label();
             this.GoalBar = new CircularProgressBar.CircularProgressBar();
             this.ChDailyInfo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.ChDailyInfo)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // LblStreak
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label1.Location = new System.Drawing.Point(36, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Day-Streak: 0";
+            this.LblStreak.AutoSize = true;
+            this.LblStreak.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.LblStreak.Location = new System.Drawing.Point(36, 47);
+            this.LblStreak.Name = "LblStreak";
+            this.LblStreak.Size = new System.Drawing.Size(147, 31);
+            this.LblStreak.TabIndex = 0;
+            this.LblStreak.Text = "Day-Streak: 0";
             // 
             // GoalBar
             // 
@@ -54,7 +54,7 @@
             this.GoalBar.BackColor = System.Drawing.Color.Transparent;
             this.GoalBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoalBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.GoalBar.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GoalBar.InnerColor = System.Drawing.Color.Transparent;
             this.GoalBar.InnerMargin = 2;
             this.GoalBar.InnerWidth = -1;
             this.GoalBar.Location = new System.Drawing.Point(442, 18);
@@ -84,24 +84,24 @@
             // 
             this.ChDailyInfo.BackColor = System.Drawing.Color.Transparent;
             this.ChDailyInfo.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.ChDailyInfo.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.Name = "Legend1";
-            this.ChDailyInfo.Legends.Add(legend1);
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.ChDailyInfo.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend2.Name = "Legend1";
+            this.ChDailyInfo.Legends.Add(legend2);
             this.ChDailyInfo.Location = new System.Drawing.Point(42, 262);
             this.ChDailyInfo.Name = "ChDailyInfo";
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.MarkerColor = System.Drawing.Color.RoyalBlue;
-            series1.MarkerSize = 6;
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "Study Hours";
-            this.ChDailyInfo.Series.Add(series1);
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.MarkerColor = System.Drawing.Color.RoyalBlue;
+            series2.MarkerSize = 6;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series2.Name = "Study Hours";
+            this.ChDailyInfo.Series.Add(series2);
             this.ChDailyInfo.Size = new System.Drawing.Size(661, 355);
             this.ChDailyInfo.TabIndex = 2;
             this.ChDailyInfo.Text = "chart1";
@@ -112,7 +112,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ChDailyInfo);
             this.Controls.Add(this.GoalBar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblStreak);
             this.Name = "Main";
             this.Size = new System.Drawing.Size(750, 700);
             this.Load += new System.EventHandler(this.Main_Load);
@@ -124,7 +124,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblStreak;
         private CircularProgressBar.CircularProgressBar GoalBar;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChDailyInfo;
     }

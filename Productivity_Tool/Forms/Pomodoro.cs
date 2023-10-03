@@ -23,7 +23,7 @@ namespace Productivity_Tool.Forms
         bool WaitSecond;
         string Message;
         int StrIndex;
-        SoundPlayer sound;
+        SoundPlayer Stop_Sound;
 
         int CurrentSessionCount = 0;
         int GoalCount = 3;
@@ -105,7 +105,7 @@ namespace Productivity_Tool.Forms
             WaitSecond = false;
 
             RefreshCounter();
-            sound = new SoundPlayer(@".\Sound\Stop_Sound.wav");
+            Stop_Sound = new SoundPlayer(@".\Sound\Stop_Sound.wav");
         }
 
         private void BtnStart_Click(object sender, EventArgs e)
@@ -171,7 +171,7 @@ namespace Productivity_Tool.Forms
                         ReloadTimer();
                         SaveStudyTime();
                         SendMessage("Rest...");
-                        sound.Play();
+                        Stop_Sound.Play();
 
                         TimerBar.ProgressColor = Color.FromArgb(26, 117, 255);
 
@@ -206,6 +206,7 @@ namespace Productivity_Tool.Forms
                         Mode = 0;
                         TimerBar.Maximum = StudyTime.GetTotalSeconds();
                         ReloadTimer();
+                        Stop_Sound.Play();
 
                         TimerBar.ProgressColor = Color.FromArgb(255, 128, 0);
 

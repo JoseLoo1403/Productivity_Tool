@@ -42,12 +42,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.BtnApply = new System.Windows.Forms.Button();
+            this.TxtGoal = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudyHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudyMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtRestHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtRestMinute)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudySecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtRestSecond)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtGoal)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +67,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label2.Location = new System.Drawing.Point(181, 151);
+            this.label2.Location = new System.Drawing.Point(172, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 31);
             this.label2.TabIndex = 1;
@@ -76,7 +79,7 @@
             this.TxtStudyHour.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TxtStudyHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtStudyHour.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.TxtStudyHour.Location = new System.Drawing.Point(187, 217);
+            this.TxtStudyHour.Location = new System.Drawing.Point(178, 168);
             this.TxtStudyHour.Name = "TxtStudyHour";
             this.TxtStudyHour.Size = new System.Drawing.Size(67, 34);
             this.TxtStudyHour.TabIndex = 2;
@@ -87,7 +90,7 @@
             this.TxtStudyMinute.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TxtStudyMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtStudyMinute.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.TxtStudyMinute.Location = new System.Drawing.Point(285, 219);
+            this.TxtStudyMinute.Location = new System.Drawing.Point(276, 170);
             this.TxtStudyMinute.Name = "TxtStudyMinute";
             this.TxtStudyMinute.Size = new System.Drawing.Size(67, 34);
             this.TxtStudyMinute.TabIndex = 3;
@@ -98,7 +101,7 @@
             this.TxtRestHour.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TxtRestHour.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtRestHour.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.TxtRestHour.Location = new System.Drawing.Point(187, 366);
+            this.TxtRestHour.Location = new System.Drawing.Point(178, 317);
             this.TxtRestHour.Name = "TxtRestHour";
             this.TxtRestHour.Size = new System.Drawing.Size(67, 34);
             this.TxtRestHour.TabIndex = 4;
@@ -109,10 +112,11 @@
             this.TxtRestMinute.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TxtRestMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtRestMinute.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.TxtRestMinute.Location = new System.Drawing.Point(285, 368);
+            this.TxtRestMinute.Location = new System.Drawing.Point(276, 319);
             this.TxtRestMinute.Name = "TxtRestMinute";
             this.TxtRestMinute.Size = new System.Drawing.Size(67, 34);
             this.TxtRestMinute.TabIndex = 5;
+            this.TxtRestMinute.ValueChanged += new System.EventHandler(this.TxtRestMinute_ValueChanged);
             // 
             // TxtStudySecond
             // 
@@ -120,7 +124,7 @@
             this.TxtStudySecond.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TxtStudySecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtStudySecond.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.TxtStudySecond.Location = new System.Drawing.Point(387, 217);
+            this.TxtStudySecond.Location = new System.Drawing.Point(378, 168);
             this.TxtStudySecond.Name = "TxtStudySecond";
             this.TxtStudySecond.Size = new System.Drawing.Size(67, 34);
             this.TxtStudySecond.TabIndex = 6;
@@ -131,7 +135,7 @@
             this.TxtRestSecond.BackColor = System.Drawing.SystemColors.ControlLight;
             this.TxtRestSecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtRestSecond.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.TxtRestSecond.Location = new System.Drawing.Point(387, 368);
+            this.TxtRestSecond.Location = new System.Drawing.Point(378, 319);
             this.TxtRestSecond.Name = "TxtRestSecond";
             this.TxtRestSecond.Size = new System.Drawing.Size(67, 34);
             this.TxtRestSecond.TabIndex = 7;
@@ -141,7 +145,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label3.Location = new System.Drawing.Point(181, 299);
+            this.label3.Location = new System.Drawing.Point(172, 250);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 31);
             this.label3.TabIndex = 8;
@@ -152,7 +156,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label4.Location = new System.Drawing.Point(260, 219);
+            this.label4.Location = new System.Drawing.Point(251, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 31);
             this.label4.TabIndex = 9;
@@ -163,7 +167,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label5.Location = new System.Drawing.Point(362, 219);
+            this.label5.Location = new System.Drawing.Point(353, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 31);
             this.label5.TabIndex = 10;
@@ -174,29 +178,31 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label6.Location = new System.Drawing.Point(260, 368);
+            this.label6.Location = new System.Drawing.Point(251, 319);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 31);
             this.label6.TabIndex = 11;
             this.label6.Text = ":";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
-            this.label7.Location = new System.Drawing.Point(362, 368);
+            this.label7.Location = new System.Drawing.Point(353, 319);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(19, 31);
             this.label7.TabIndex = 12;
             this.label7.Text = ":";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // BtnApply
             // 
             this.BtnApply.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnApply.Font = new System.Drawing.Font("Nirmala UI Semilight", 11.8F);
-            this.BtnApply.Location = new System.Drawing.Point(264, 462);
+            this.BtnApply.Location = new System.Drawing.Point(459, 438);
             this.BtnApply.Name = "BtnApply";
             this.BtnApply.Size = new System.Drawing.Size(117, 43);
             this.BtnApply.TabIndex = 13;
@@ -204,11 +210,35 @@
             this.BtnApply.UseVisualStyleBackColor = true;
             this.BtnApply.Click += new System.EventHandler(this.BtnApply_Click);
             // 
+            // TxtGoal
+            // 
+            this.TxtGoal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TxtGoal.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.TxtGoal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtGoal.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.TxtGoal.Location = new System.Drawing.Point(178, 447);
+            this.TxtGoal.Name = "TxtGoal";
+            this.TxtGoal.Size = new System.Drawing.Size(67, 34);
+            this.TxtGoal.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.label8.Location = new System.Drawing.Point(172, 385);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 31);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Set Goal:";
+            // 
             // Configuration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.TxtGoal);
             this.Controls.Add(this.BtnApply);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -232,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtRestMinute)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtStudySecond)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtRestSecond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtGoal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +284,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button BtnApply;
+        private System.Windows.Forms.NumericUpDown TxtGoal;
+        private System.Windows.Forms.Label label8;
     }
 }

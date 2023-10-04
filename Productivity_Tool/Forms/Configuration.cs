@@ -14,13 +14,6 @@ namespace Productivity_Tool.Forms
 {
     public partial class Configuration : UserControl
     {
-        private void CleanTextBoxes()
-        {
-            TxtStudyHour.Text = "00";
-            TxtStudyMinute.Text = "00";
-            TxtStudySecond.Text = "00";
-        }
-
         private void UpdateConfiguration(string Name, string Value)
         {
             ConfigurationRepository repo = new ConfigurationRepository();
@@ -47,23 +40,13 @@ namespace Productivity_Tool.Forms
             TxtGoal.Value = Convert.ToInt16(repository.GetConfigurationValueByName("Session Goal"));
         }
 
-        public Configuration()
-        {
-            InitializeComponent();
-        }
-
-        private void Configuration_Load(object sender, EventArgs e)
-        {
-            LoadConfiguration();
-        }
-
-        private void BtnApply_Click(object sender, EventArgs e)
+        private void UploadNewConfigurations()
         {
             //Security
             decimal StudySum = TxtStudyHour.Value + TxtStudyMinute.Value + TxtStudySecond.Value;
             decimal RestSum = TxtRestHour.Value + TxtRestMinute.Value + TxtRestSecond.Value;
 
-            if(StudySum < 1)
+            if (StudySum < 1)
             {
                 MessageBox.Show("Please insert an amount of time in study time");
                 return;
@@ -81,12 +64,12 @@ namespace Productivity_Tool.Forms
                 return;
             }
 
-            string StudyValue,RestValue = "";
+            string StudyValue, RestValue = "";
 
             StudyValue = $"{TxtStudyHour.Value}:{TxtStudyMinute.Value}:{TxtStudySecond.Value}";
             RestValue = $"{TxtRestHour.Value}:{TxtRestMinute.Value}:{TxtRestSecond.Value}";
 
-            UpdateConfiguration("Study Time",StudyValue);
+            UpdateConfiguration("Study Time", StudyValue);
             UpdateConfiguration("Rest Time", RestValue);
             UpdateConfiguration("Session Goal", TxtGoal.Value.ToString());
 
@@ -95,19 +78,19 @@ namespace Productivity_Tool.Forms
             MessageBox.Show("Update been made");
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        public Configuration()
         {
-
+            InitializeComponent();
         }
 
-        private void TxtRestMinute_ValueChanged(object sender, EventArgs e)
+        private void Configuration_Load(object sender, EventArgs e)
         {
-
+            LoadConfiguration();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void BtnApply_Click(object sender, EventArgs e)
         {
-
+            UploadNewConfigurations();
         }
     }
 }

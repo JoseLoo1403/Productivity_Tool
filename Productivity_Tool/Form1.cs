@@ -5,11 +5,16 @@ using Productivity_Tool.Forms;
 using Data.Repositories;
 using Data.Entities;
 using System.Linq;
+using Productivity_Tool.Helpers;
 
 namespace Productivity_Tool
 {
     public partial class Form1 : Form
     {
+        //Global variables
+
+        GlobalContextInfo ContextInfo { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -43,6 +48,13 @@ namespace Productivity_Tool
             repo.CreateSessionIfApplies();
         }
 
+        private void EnableButtons(object sender, bool arg)
+        {
+            BtnConfiguration.Enabled = arg;
+            BtnMain.Enabled = arg;
+            BtnPomodoro.Enabled = arg;
+        }
+
         private void BtnMain_Click(object sender, EventArgs e)
         {
             Main f = new Main();
@@ -60,11 +72,16 @@ namespace Productivity_Tool
             m.Show();
 
             MakeTodaySession();
+
+            ContextInfo = new GlobalContextInfo();
+
+            //Events
+            ContextInfo.EnableBaseInterfaceEvent += EnableButtons;
         }
 
         private void BtnPomodoro_Click(object sender, EventArgs e)
         {
-            Pomodoro f = new Pomodoro();
+            Pomodoro f = new Pomodoro(ContextInfo);
             f.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.RemoveAt(0);
             this.MainDisplayPN.Controls.Add(f);

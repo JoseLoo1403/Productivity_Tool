@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.NavBarPN = new System.Windows.Forms.Panel();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnConfiguration = new System.Windows.Forms.Button();
             this.BtnPomodoro = new System.Windows.Forms.Button();
             this.BtnMain = new System.Windows.Forms.Button();
             this.MainDisplayPN = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NavBarPN.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             // NavBarPN
             // 
             this.NavBarPN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(65)))), ((int)(((byte)(92)))));
+            this.NavBarPN.Controls.Add(this.lblVersion);
             this.NavBarPN.Controls.Add(this.pictureBox1);
             this.NavBarPN.Controls.Add(this.BtnConfiguration);
             this.NavBarPN.Controls.Add(this.BtnPomodoro);
@@ -51,6 +53,29 @@
             this.NavBarPN.Name = "NavBarPN";
             this.NavBarPN.Size = new System.Drawing.Size(275, 723);
             this.NavBarPN.TabIndex = 1;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Nirmala UI Semilight", 8.8F);
+            this.lblVersion.ForeColor = System.Drawing.Color.White;
+            this.lblVersion.Location = new System.Drawing.Point(12, 694);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(91, 20);
+            this.lblVersion.TabIndex = 4;
+            this.lblVersion.Text = "Version: 0.1.0";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(38, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // BtnConfiguration
             // 
@@ -68,6 +93,8 @@
             this.BtnConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnConfiguration.UseVisualStyleBackColor = false;
             this.BtnConfiguration.Click += new System.EventHandler(this.BtnConfiguration_Click);
+            this.BtnConfiguration.MouseEnter += new System.EventHandler(this.HoverEffect);
+            this.BtnConfiguration.MouseLeave += new System.EventHandler(this.HoverEffectExit);
             // 
             // BtnPomodoro
             // 
@@ -96,7 +123,7 @@
             this.BtnMain.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.BtnMain.ForeColor = System.Drawing.Color.White;
             this.BtnMain.Image = ((System.Drawing.Image)(resources.GetObject("BtnMain.Image")));
-            this.BtnMain.Location = new System.Drawing.Point(0, 251);
+            this.BtnMain.Location = new System.Drawing.Point(3, 244);
             this.BtnMain.Name = "BtnMain";
             this.BtnMain.Size = new System.Drawing.Size(275, 49);
             this.BtnMain.TabIndex = 0;
@@ -115,18 +142,6 @@
             this.MainDisplayPN.Size = new System.Drawing.Size(787, 723);
             this.MainDisplayPN.TabIndex = 2;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,6 +158,7 @@
             this.Text = "Pomodoro";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.NavBarPN.ResumeLayout(false);
+            this.NavBarPN.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -156,6 +172,7 @@
         private System.Windows.Forms.Panel MainDisplayPN;
         private System.Windows.Forms.Button BtnConfiguration;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

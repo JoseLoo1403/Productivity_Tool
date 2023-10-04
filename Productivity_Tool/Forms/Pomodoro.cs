@@ -24,6 +24,7 @@ namespace Productivity_Tool.Forms
         string Message;
         int StrIndex;
         SoundPlayer Stop_Sound;
+        GlobalContextInfo ContextInfo;
 
         int CurrentSessionCount = 0;
         int GoalCount = 3;
@@ -50,6 +51,13 @@ namespace Productivity_Tool.Forms
             AnimationTimer.Start();
         }
 
+        private void SaveCurrentInfoInContext()
+        {
+            ContextInfo.CurrentTime = BarTime;
+            ContextInfo.Mode = Mode;
+            ContextInfo.PomodoroValue = TimerBar.Value;
+        }
+
         private void SaveStudyTime()
         {
             StudySessionsRepository repo = new StudySessionsRepository();
@@ -59,6 +67,29 @@ namespace Productivity_Tool.Forms
             ConfigurationRepository con = new ConfigurationRepository();
 
             con.UpdateConfigurationByName("Current count", CurrentSessionCount.ToString());
+        }
+
+        private void LoadPresavedInformation()
+        {
+            BarTime = ContextInfo.CurrentTime != null ? ContextInfo.CurrentTime : new TimerObj(0, 0);
+            Mode = ContextInfo.Mode;
+
+            if (Mode == 0)
+            {
+                TimerBar.Maximum = StudyTime.GetTotalSeconds();
+            }
+            else
+            {
+                TimerBar.Maximum = RestTime.GetTotalSeconds();
+                TimerBar.ProgressColor = Color.FromArgb(26, 117, 255);
+            }
+
+            if (ContextInfo.CurrentTime != null)
+            {
+                TimerBar.Text = ContextInfo.CurrentTime.GetTimeFormat();
+            }
+
+            TimerBar.Value = ContextInfo.PomodoroValue;
         }
 
         private void LoadStudyConfigurations()
@@ -87,21 +118,19 @@ namespace Productivity_Tool.Forms
             SendMessage("Lets study!");
         }
 
-        public Pomodoro()
+        public Pomodoro(GlobalContextInfo contextInfo)
         {
             InitializeComponent();
+            ContextInfo = contextInfo;
         }
 
         private void Pomodoro_Load(object sender, EventArgs e)
         {
             StudyTime = new TimerObj(0, 0);
             RestTime = new TimerObj(0, 0);
-            BarTime = new TimerObj(0,0);
-            TimerBar.Value = 0;
 
             LoadStudyConfigurations();
-
-            TimerBar.Maximum = StudyTime.GetTotalSeconds();
+            LoadPresavedInformation();
             WaitSecond = false;
 
             RefreshCounter();
@@ -149,12 +178,14 @@ namespace Productivity_Tool.Forms
             {
                 SendMessage("Rest...");
             }
+
+            ContextInfo.EnableBaseInterface(false);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
-            if (!WaitSecond)
+            if (!WaitSecond && TimerBar.Maximum > TimerBar.Value)
             {
                 TimerBar.Value += 1;
                 TimerBar.Text = BarTime.AddTime();
@@ -184,7 +215,7 @@ namespace Productivity_Tool.Forms
 
                         WaitSecond = true;
 
-                        if (CurrentSessionCount == GoalCount)
+                        if (CurrentSessionCount == GoalCount) //Study session completed
                         {
                             timer1.Stop();
                             SendMessage($"Sessions Completed {CurrentSessionCount}/{GoalCount}");
@@ -193,6 +224,8 @@ namespace Productivity_Tool.Forms
                             BtnStart.Text = "Restart sessions";
                             SaveStudyTime();
                             WaitSecond = false;
+                            ContextInfo.EnableBaseInterface(true);
+                            SaveCurrentInfoInContext();
                         }
                     }
                 }
@@ -236,6 +269,10 @@ namespace Productivity_Tool.Forms
                 BtnStop.Text = "Stop";
                 ReloadTimer();
             }
+
+            ContextInfo.EnableBaseInterface(true);
+            SaveCurrentInfoInContext();
+            SaveStudyTime();
         }
 
         private void BtnConfig_Click(object sender, EventArgs e)
@@ -244,11 +281,13 @@ namespace Productivity_Tool.Forms
             {
                 LblStudyInfo.Visible = false;
                 LblRestInfo.Visible = false;
+                BtnRestartCount.Visible = false;
             }
             else
             {
                 LblStudyInfo.Visible = true;
                 LblRestInfo.Visible = true;
+                BtnRestartCount.Visible = true;
             }
         }
 
@@ -263,6 +302,12 @@ namespace Productivity_Tool.Forms
             {
                 AnimationTimer.Stop();
             }
+        }
+
+        private void BtnRestartCount_Click(object sender, EventArgs e)
+        {
+            CurrentSessionCount = 0;
+            RefreshCounter();
         }
     }
 }

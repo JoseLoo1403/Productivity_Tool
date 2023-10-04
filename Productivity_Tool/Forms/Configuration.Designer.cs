@@ -116,7 +116,6 @@
             this.TxtRestMinute.Name = "TxtRestMinute";
             this.TxtRestMinute.Size = new System.Drawing.Size(67, 34);
             this.TxtRestMinute.TabIndex = 5;
-            this.TxtRestMinute.ValueChanged += new System.EventHandler(this.TxtRestMinute_ValueChanged);
             // 
             // TxtStudySecond
             // 
@@ -183,7 +182,6 @@
             this.label6.Size = new System.Drawing.Size(19, 31);
             this.label6.TabIndex = 11;
             this.label6.Text = ":";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -195,7 +193,6 @@
             this.label7.Size = new System.Drawing.Size(19, 31);
             this.label7.TabIndex = 12;
             this.label7.Text = ":";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // BtnApply
             // 

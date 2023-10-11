@@ -50,5 +50,12 @@ namespace Productivity_Tool.Helpers
             Minute = _minute;
             Seconds = 0;
         }
+
+        public void ResetTime()
+        {
+            Hour = 0;
+            Minute = 0;
+            Seconds = 0;
+        }
     }
 }

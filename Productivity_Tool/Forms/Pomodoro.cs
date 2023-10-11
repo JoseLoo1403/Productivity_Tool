@@ -17,6 +17,7 @@ namespace Productivity_Tool.Forms
     public partial class Pomodoro : UserControl
     {
         TimerObj BarTime;
+        TimerObj Temp_Timer;
         TimerObj StudyTime;
         TimerObj RestTime;
         int Mode = 0;  // 0 = study    1 = rest
@@ -35,7 +36,8 @@ namespace Productivity_Tool.Forms
             TimerBar.Refresh();
             TimerBar.Text = "00:00:00";
 
-            BarTime = new TimerObj(0,0);
+            BarTime.ResetTime();
+            Temp_Timer.ResetTime();
         }
 
         private void RefreshCounter()
@@ -51,6 +53,19 @@ namespace Productivity_Tool.Forms
             AnimationTimer.Start();
         }
 
+        private void RestartSession()
+        {
+            CurrentSessionCount = 0;
+            ReloadTimer();
+
+            ConfigurationRepository repo = new ConfigurationRepository();
+
+            repo.UpdateConfigurationByName("Current count", "0");
+
+            RefreshCounter();
+            Mode = 0;
+        }
+
         private void SaveCurrentInfoInContext()
         {
             ContextInfo.CurrentTime = BarTime;
@@ -58,11 +73,11 @@ namespace Productivity_Tool.Forms
             ContextInfo.PomodoroValue = TimerBar.Value;
         }
 
-        private void SaveStudyTime()
+        private void SaveStudyTime(TimerObj time)
         {
             StudySessionsRepository repo = new StudySessionsRepository();
 
-            repo.AddTimeToSession(DateTime.Today.ToString("yyyy/MM/dd"), StudyTime.Hour, StudyTime.Minute, StudyTime.Seconds);
+            repo.AddTimeToSession(DateTime.Today.ToString("yyyy/MM/dd"), time.Hour, time.Minute, time.Seconds);
 
             ConfigurationRepository con = new ConfigurationRepository();
 
@@ -90,6 +105,11 @@ namespace Productivity_Tool.Forms
             }
 
             TimerBar.Value = ContextInfo.PomodoroValue;
+
+            if (TimerBar.Value > 0)
+            {
+                BtnStop.Text = "Restart";
+            }
         }
 
         private void LoadStudyConfigurations()
@@ -128,6 +148,7 @@ namespace Productivity_Tool.Forms
         {
             StudyTime = new TimerObj(0, 0);
             RestTime = new TimerObj(0, 0);
+            Temp_Timer = new TimerObj(0,0);
 
             LoadStudyConfigurations();
             LoadPresavedInformation();
@@ -143,32 +164,15 @@ namespace Productivity_Tool.Forms
             {
                 BtnStop.Enabled = true;
                 BtnStart.Text = "Start";
-                CurrentSessionCount = 0;
-                ReloadTimer();
 
-                ConfigurationRepository repo = new ConfigurationRepository();
-
-                repo.UpdateConfigurationByName("Current count", "0");
-
-                RefreshCounter();
-                Mode = 0;
+                RestartSession();
             }
 
             timer1.Start();
 
-            if (BtnStop.Text == "Restart")
-            {
-                BtnStop.Text = "Stop";
-            }
-
-            if (BtnStart.Enabled == true)
-            {
-                BtnStart.Enabled = false;
-            }
-            else
-            {
-                BtnStart.Enabled = true;
-            }
+            BtnStop.Text = "Stop";
+            BtnStart.Enabled = false;
+            BtnRestartCount.Enabled = false;
 
             if (Mode == 0)
             {
@@ -188,6 +192,7 @@ namespace Productivity_Tool.Forms
             if (!WaitSecond && TimerBar.Maximum > TimerBar.Value)
             {
                 TimerBar.Value += 1;
+                Temp_Timer.AddTime();
                 TimerBar.Text = BarTime.AddTime();
             }
             
@@ -200,7 +205,7 @@ namespace Productivity_Tool.Forms
                         Mode = 1;
                         TimerBar.Maximum = RestTime.GetTotalSeconds();
                         ReloadTimer();
-                        SaveStudyTime();
+                        SaveStudyTime(StudyTime);
                         SendMessage("Rest...");
                         Stop_Sound.Play();
 
@@ -222,7 +227,7 @@ namespace Productivity_Tool.Forms
                             BtnStop.Enabled = false;
                             BtnStart.Enabled = true;
                             BtnStart.Text = "Restart sessions";
-                            SaveStudyTime();
+                            SaveStudyTime(StudyTime);
                             WaitSecond = false;
                             ContextInfo.EnableBaseInterface(true);
                             SaveCurrentInfoInContext();
@@ -261,7 +266,11 @@ namespace Productivity_Tool.Forms
                 timer1.Stop();
                 BtnStop.Text = "Restart";
                 BtnStart.Enabled = true;
+                BtnConfig.Enabled = true;
                 BtnStart.Text = "Continue";
+                SaveStudyTime(Temp_Timer);
+                Temp_Timer.ResetTime();
+                BtnRestartCount.Enabled = true;
             }
             else
             {
@@ -272,7 +281,6 @@ namespace Productivity_Tool.Forms
 
             ContextInfo.EnableBaseInterface(true);
             SaveCurrentInfoInContext();
-            SaveStudyTime();
         }
 
         private void BtnConfig_Click(object sender, EventArgs e)
@@ -307,7 +315,10 @@ namespace Productivity_Tool.Forms
         private void BtnRestartCount_Click(object sender, EventArgs e)
         {
             CurrentSessionCount = 0;
-            RefreshCounter();
+            ContextInfo.CurrentCount = 0;
+
+            RestartSession();
+            BtnStart.Text = "Start";
         }
     }
 }

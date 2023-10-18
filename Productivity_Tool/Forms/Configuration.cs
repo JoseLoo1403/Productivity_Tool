@@ -73,8 +73,6 @@ namespace Productivity_Tool.Forms
             UpdateConfiguration("Rest Time", RestValue);
             UpdateConfiguration("Session Goal", TxtGoal.Value.ToString());
 
-            //CleanTextBoxes();
-
             MessageBox.Show("Update been made");
         }
 

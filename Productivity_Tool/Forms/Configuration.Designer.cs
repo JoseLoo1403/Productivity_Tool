@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtStudyHour = new System.Windows.Forms.NumericUpDown();
             this.TxtStudyMinute = new System.Windows.Forms.NumericUpDown();
@@ -52,15 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtRestSecond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGoal)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Configurations";
             // 
             // label2
             // 
@@ -91,6 +81,11 @@
             this.TxtStudyMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtStudyMinute.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.TxtStudyMinute.Location = new System.Drawing.Point(276, 170);
+            this.TxtStudyMinute.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.TxtStudyMinute.Name = "TxtStudyMinute";
             this.TxtStudyMinute.Size = new System.Drawing.Size(67, 34);
             this.TxtStudyMinute.TabIndex = 3;
@@ -113,6 +108,11 @@
             this.TxtRestMinute.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtRestMinute.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.TxtRestMinute.Location = new System.Drawing.Point(276, 319);
+            this.TxtRestMinute.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.TxtRestMinute.Name = "TxtRestMinute";
             this.TxtRestMinute.Size = new System.Drawing.Size(67, 34);
             this.TxtRestMinute.TabIndex = 5;
@@ -124,6 +124,11 @@
             this.TxtStudySecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtStudySecond.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.TxtStudySecond.Location = new System.Drawing.Point(378, 168);
+            this.TxtStudySecond.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.TxtStudySecond.Name = "TxtStudySecond";
             this.TxtStudySecond.Size = new System.Drawing.Size(67, 34);
             this.TxtStudySecond.TabIndex = 6;
@@ -135,6 +140,11 @@
             this.TxtRestSecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtRestSecond.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.TxtRestSecond.Location = new System.Drawing.Point(378, 319);
+            this.TxtRestSecond.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             this.TxtRestSecond.Name = "TxtRestSecond";
             this.TxtRestSecond.Size = new System.Drawing.Size(67, 34);
             this.TxtRestSecond.TabIndex = 7;
@@ -249,7 +259,6 @@
             this.Controls.Add(this.TxtStudyMinute);
             this.Controls.Add(this.TxtStudyHour);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "Configuration";
             this.Size = new System.Drawing.Size(776, 618);
             this.Load += new System.EventHandler(this.Configuration_Load);
@@ -266,8 +275,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown TxtStudyHour;
         private System.Windows.Forms.NumericUpDown TxtStudyMinute;

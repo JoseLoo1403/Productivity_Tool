@@ -47,7 +47,7 @@
             // 
             this.BtnStart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnStart.BackColor = System.Drawing.Color.Transparent;
-            this.BtnStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(93)))), ((int)(((byte)(130)))));
+            this.BtnStart.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(74)))), ((int)(((byte)(145)))));
             this.BtnStart.FlatAppearance.BorderSize = 2;
             this.BtnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStart.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
@@ -117,7 +117,7 @@
             // 
             this.BtnStop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnStop.BackColor = System.Drawing.Color.Transparent;
-            this.BtnStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(93)))), ((int)(((byte)(130)))));
+            this.BtnStop.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(74)))), ((int)(((byte)(145)))));
             this.BtnStop.FlatAppearance.BorderSize = 2;
             this.BtnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnStop.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
@@ -190,7 +190,7 @@
             // 
             this.BtnRestartCount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnRestartCount.BackColor = System.Drawing.Color.Transparent;
-            this.BtnRestartCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(93)))), ((int)(((byte)(130)))));
+            this.BtnRestartCount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(74)))), ((int)(((byte)(145)))));
             this.BtnRestartCount.FlatAppearance.BorderSize = 2;
             this.BtnRestartCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRestartCount.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);

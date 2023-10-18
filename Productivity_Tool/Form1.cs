@@ -12,7 +12,7 @@ namespace Productivity_Tool
     public partial class Form1 : Form
     {
         //Global variables
-
+        public Point mouseLocation;
         GlobalContextInfo ContextInfo { get; set; }
 
         public Form1()
@@ -92,14 +92,14 @@ namespace Productivity_Tool
         {
             Button btn = sender as Button;
 
-            btn.BackColor = Color.FromArgb(29, 93, 130);
+            btn.BackColor = Color.FromArgb(8, 92, 175);
         }
 
         private void HoverEffectExit(object sender, EventArgs e)
         {
             Button btn = sender as Button;
 
-            btn.BackColor = Color.FromArgb(8, 65, 92);
+            btn.BackColor = Color.FromArgb(5, 74, 145);
         }
 
         private void BtnConfiguration_Click(object sender, EventArgs e)
@@ -109,6 +109,31 @@ namespace Productivity_Tool
             this.MainDisplayPN.Controls.RemoveAt(0);
             this.MainDisplayPN.Controls.Add(f);
             f.Show();
+        }
+
+        private void PnTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y);
+        }
+
+        private void PnTop_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
+            }
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

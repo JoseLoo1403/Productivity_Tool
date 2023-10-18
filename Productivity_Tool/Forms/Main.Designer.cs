@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.LblStreak = new System.Windows.Forms.Label();
             this.GoalBar = new CircularProgressBar.CircularProgressBar();
             this.ChDailyInfo = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.LblTodayTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ChDailyInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,32 +85,43 @@
             // 
             this.ChDailyInfo.BackColor = System.Drawing.Color.Transparent;
             this.ChDailyInfo.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.ChDailyInfo.ChartAreas.Add(chartArea2);
-            legend2.BackColor = System.Drawing.Color.Transparent;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend2.Name = "Legend1";
-            this.ChDailyInfo.Legends.Add(legend2);
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.ChDailyInfo.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Transparent;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Name = "Legend1";
+            this.ChDailyInfo.Legends.Add(legend1);
             this.ChDailyInfo.Location = new System.Drawing.Point(42, 262);
             this.ChDailyInfo.Name = "ChDailyInfo";
-            series2.BorderWidth = 3;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.MarkerColor = System.Drawing.Color.RoyalBlue;
-            series2.MarkerSize = 6;
-            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series2.Name = "Study Hours";
-            this.ChDailyInfo.Series.Add(series2);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.MarkerColor = System.Drawing.Color.RoyalBlue;
+            series1.MarkerSize = 6;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "Study Hours";
+            this.ChDailyInfo.Series.Add(series1);
             this.ChDailyInfo.Size = new System.Drawing.Size(661, 355);
             this.ChDailyInfo.TabIndex = 2;
             this.ChDailyInfo.Text = "chart1";
+            // 
+            // LblTodayTime
+            // 
+            this.LblTodayTime.AutoSize = true;
+            this.LblTodayTime.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.LblTodayTime.Location = new System.Drawing.Point(36, 149);
+            this.LblTodayTime.Name = "LblTodayTime";
+            this.LblTodayTime.Size = new System.Drawing.Size(224, 31);
+            this.LblTodayTime.TabIndex = 3;
+            this.LblTodayTime.Text = "Today\'s Study Time: 0";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LblTodayTime);
             this.Controls.Add(this.ChDailyInfo);
             this.Controls.Add(this.GoalBar);
             this.Controls.Add(this.LblStreak);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.Label LblStreak;
         private CircularProgressBar.CircularProgressBar GoalBar;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChDailyInfo;
+        private System.Windows.Forms.Label LblTodayTime;
     }
 }

@@ -180,7 +180,7 @@
             this.LblSessionCount.AutoSize = true;
             this.LblSessionCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblSessionCount.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.8F);
-            this.LblSessionCount.Location = new System.Drawing.Point(371, 275);
+            this.LblSessionCount.Location = new System.Drawing.Point(383, 275);
             this.LblSessionCount.Name = "LblSessionCount";
             this.LblSessionCount.Size = new System.Drawing.Size(34, 23);
             this.LblSessionCount.TabIndex = 9;

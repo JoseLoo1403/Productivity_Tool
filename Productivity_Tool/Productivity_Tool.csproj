@@ -86,6 +86,7 @@
       <DependentUpon>Pomodoro.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\GlobalContextInfo.cs" />
+    <Compile Include="Helpers\SessionModel.cs" />
     <Compile Include="Helpers\TimerObj.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

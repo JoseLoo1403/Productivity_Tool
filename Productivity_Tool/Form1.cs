@@ -66,12 +66,12 @@ namespace Productivity_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            MakeTodaySession();
+
             Main m = new Main();
             m.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.Add(m);
             m.Show();
-
-            MakeTodaySession();
 
             ContextInfo = new GlobalContextInfo();
 

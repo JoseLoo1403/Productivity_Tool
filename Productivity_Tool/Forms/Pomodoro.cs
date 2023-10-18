@@ -73,8 +73,10 @@ namespace Productivity_Tool.Forms
             ContextInfo.PomodoroValue = TimerBar.Value;
         }
 
-        private void SaveStudyTime(TimerObj time)
+        private void SaveStudyTime()
         {
+            var time = Temp_Timer;
+
             StudySessionsRepository repo = new StudySessionsRepository();
 
             repo.AddTimeToSession(DateTime.Today.ToString("yyyy/MM/dd"), time.Hour, time.Minute, time.Seconds);
@@ -82,6 +84,8 @@ namespace Productivity_Tool.Forms
             ConfigurationRepository con = new ConfigurationRepository();
 
             con.UpdateConfigurationByName("Current count", CurrentSessionCount.ToString());
+
+            Temp_Timer.ResetTime();
         }
 
         private void LoadPresavedInformation()
@@ -109,6 +113,10 @@ namespace Productivity_Tool.Forms
             if (TimerBar.Value > 0)
             {
                 BtnStop.Text = "Restart";
+            }
+            else
+            {
+                BtnStop.Enabled = false;
             }
         }
 
@@ -162,7 +170,6 @@ namespace Productivity_Tool.Forms
         {
             if (CurrentSessionCount >= GoalCount)
             {
-                BtnStop.Enabled = true;
                 BtnStart.Text = "Start";
 
                 RestartSession();
@@ -171,6 +178,7 @@ namespace Productivity_Tool.Forms
             timer1.Start();
 
             BtnStop.Text = "Stop";
+            BtnStop.Enabled = true;
             BtnStart.Enabled = false;
             BtnRestartCount.Enabled = false;
 
@@ -192,7 +200,10 @@ namespace Productivity_Tool.Forms
             if (!WaitSecond && TimerBar.Maximum > TimerBar.Value)
             {
                 TimerBar.Value += 1;
-                Temp_Timer.AddTime();
+                if (Mode == 0) 
+                {
+                    Temp_Timer.AddTime();
+                }
                 TimerBar.Text = BarTime.AddTime();
             }
             
@@ -204,8 +215,8 @@ namespace Productivity_Tool.Forms
                     {
                         Mode = 1;
                         TimerBar.Maximum = RestTime.GetTotalSeconds();
+                        SaveStudyTime();
                         ReloadTimer();
-                        SaveStudyTime(StudyTime);
                         SendMessage("Rest...");
                         Stop_Sound.Play();
 
@@ -227,7 +238,7 @@ namespace Productivity_Tool.Forms
                             BtnStop.Enabled = false;
                             BtnStart.Enabled = true;
                             BtnStart.Text = "Restart sessions";
-                            SaveStudyTime(StudyTime);
+                            SaveStudyTime();
                             WaitSecond = false;
                             ContextInfo.EnableBaseInterface(true);
                             SaveCurrentInfoInContext();
@@ -268,14 +279,14 @@ namespace Productivity_Tool.Forms
                 BtnStart.Enabled = true;
                 BtnConfig.Enabled = true;
                 BtnStart.Text = "Continue";
-                SaveStudyTime(Temp_Timer);
-                Temp_Timer.ResetTime();
+                SaveStudyTime();
                 BtnRestartCount.Enabled = true;
             }
             else
             {
                 TimerBar.Value = 0;
                 BtnStop.Text = "Stop";
+                BtnStop.Enabled = false;
                 ReloadTimer();
             }
 
@@ -316,9 +327,16 @@ namespace Productivity_Tool.Forms
         {
             CurrentSessionCount = 0;
             ContextInfo.CurrentCount = 0;
+            Mode = 0;
+
+            TimerBar.Maximum = StudyTime.GetTotalSeconds();
+            TimerBar.ProgressColor = Color.FromArgb(255, 128, 0);
+            SendMessage("Lets study!");
 
             RestartSession();
             BtnStart.Text = "Start";
+            BtnStop.Text = "Stop";
+            BtnStop.Enabled = false;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Data.Entities;
 using Data.Repositories;
+using Productivity_Tool.Helpers;
 
 namespace Productivity_Tool.Forms
 {
@@ -38,15 +39,42 @@ namespace Productivity_Tool.Forms
             return TotalHours;
         }
 
-        private void LoadDataToChart()
+        private void CreateFormatData()
         {
             List<StudySessions> studySessions = GetAllSessions();
+            List<SessionModel> finalTable = new List<SessionModel>();
+            List<SessionModel> formatS = new List<SessionModel>();
 
             CurrentSession = studySessions.LastOrDefault();
 
             foreach (var x in studySessions)
             {
-                ChDailyInfo.Series["Study Hours"].Points.AddXY(x.Date, ConvertToHoursValue(x.Time));
+                formatS.Add(new SessionModel(x.Date, ConvertToHoursValue(x.Time)));
+            }
+
+            DateTime Index = formatS.FirstOrDefault().Date;
+
+            foreach (var x in formatS)
+            {
+                if (Index == x.Date)
+                {
+                    finalTable.Add(x);
+                }
+                else
+                {
+                    while(Index != x.Date)
+                    {
+                        finalTable.Add(new SessionModel(Index.ToString("yyyy/MM/dd"), 0));
+                        Index = Index.AddDays(1);
+                    }
+                }
+
+                Index = Index.AddDays(1);
+            }
+
+            foreach (var x in finalTable)
+            {
+                ChDailyInfo.Series["Study Hours"].Points.AddXY(x.Date.ToString("yyyy/MM/dd"),x.Time);
             }
         }
 
@@ -62,6 +90,7 @@ namespace Productivity_Tool.Forms
             GoalBar.Maximum = Convert.ToInt32(Goal);
             GoalBar.Value = Convert.ToInt32(Count);
             GoalBar.Text = $"{Count}/{Goal}";
+            LblTodayTime.Text = "Today's Study Time: " + CurrentSession.Time;
             GoalBar.Refresh();
         }
 
@@ -74,7 +103,7 @@ namespace Productivity_Tool.Forms
 
         private void Main_Load(object sender, EventArgs e)
         {
-            LoadDataToChart();
+            CreateFormatData();
             LoadDayStreak();
             LoadGoal();
         }

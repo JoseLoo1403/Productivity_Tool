@@ -41,6 +41,7 @@
             this.AnimationTimer = new System.Windows.Forms.Timer(this.components);
             this.LblSessionCount = new System.Windows.Forms.Label();
             this.BtnRestartCount = new System.Windows.Forms.Button();
+            this.BtnZenMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnStart
@@ -203,11 +204,26 @@
             this.BtnRestartCount.Visible = false;
             this.BtnRestartCount.Click += new System.EventHandler(this.BtnRestartCount_Click);
             // 
+            // BtnZenMode
+            // 
+            this.BtnZenMode.BackColor = System.Drawing.Color.Transparent;
+            this.BtnZenMode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(93)))), ((int)(((byte)(130)))));
+            this.BtnZenMode.FlatAppearance.BorderSize = 0;
+            this.BtnZenMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnZenMode.Image = ((System.Drawing.Image)(resources.GetObject("BtnZenMode.Image")));
+            this.BtnZenMode.Location = new System.Drawing.Point(21, 19);
+            this.BtnZenMode.Name = "BtnZenMode";
+            this.BtnZenMode.Size = new System.Drawing.Size(59, 42);
+            this.BtnZenMode.TabIndex = 11;
+            this.BtnZenMode.UseVisualStyleBackColor = false;
+            this.BtnZenMode.Click += new System.EventHandler(this.BtnZenMode_Click);
+            // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.BtnZenMode);
             this.Controls.Add(this.BtnRestartCount);
             this.Controls.Add(this.LblSessionCount);
             this.Controls.Add(this.LblMessage);
@@ -237,5 +253,6 @@
         private System.Windows.Forms.Timer AnimationTimer;
         private System.Windows.Forms.Label LblSessionCount;
         private System.Windows.Forms.Button BtnRestartCount;
+        private System.Windows.Forms.Button BtnZenMode;
     }
 }

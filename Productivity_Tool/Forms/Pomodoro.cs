@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Data.Repositories;
 using Productivity_Tool.Helpers;
 using System.Media;
+using Productivity_Tool.Properties;
 
 namespace Productivity_Tool.Forms
 {
@@ -26,6 +27,7 @@ namespace Productivity_Tool.Forms
         int StrIndex;
         SoundPlayer Stop_Sound;
         GlobalContextInfo ContextInfo;
+        bool Zen = false;
 
         int CurrentSessionCount = 0;
         int GoalCount = 3;
@@ -337,6 +339,24 @@ namespace Productivity_Tool.Forms
             BtnStart.Text = "Start";
             BtnStop.Text = "Stop";
             BtnStop.Enabled = false;
+        }
+
+        private void BtnZenMode_Click(object sender, EventArgs e)
+        {
+            if (Zen)
+            {
+                //Stop zen mode
+                BtnZenMode.Image = Properties.Resources.eye_open;
+                Zen = false;
+                ContextInfo.ZenModeInvoke(false);
+            }
+            else
+            {
+                //Activate zen mode
+                BtnZenMode.Image = Properties.Resources.eye_close1;
+                Zen = true;
+                ContextInfo.ZenModeInvoke(true);
+            }
         }
     }
 }

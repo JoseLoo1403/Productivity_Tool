@@ -140,9 +140,9 @@
             // MainDisplayPN
             // 
             this.MainDisplayPN.BackColor = System.Drawing.Color.White;
-            this.MainDisplayPN.Location = new System.Drawing.Point(274, 36);
+            this.MainDisplayPN.Location = new System.Drawing.Point(276, 35);
             this.MainDisplayPN.Name = "MainDisplayPN";
-            this.MainDisplayPN.Size = new System.Drawing.Size(788, 687);
+            this.MainDisplayPN.Size = new System.Drawing.Size(786, 690);
             this.MainDisplayPN.TabIndex = 2;
             // 
             // PnTop
@@ -191,9 +191,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1062, 723);
+            this.Controls.Add(this.MainDisplayPN);
             this.Controls.Add(this.NavBarPN);
             this.Controls.Add(this.PnTop);
-            this.Controls.Add(this.MainDisplayPN);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

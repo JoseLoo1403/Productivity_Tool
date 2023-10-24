@@ -49,7 +49,7 @@ namespace Data.Repositories
 
                 H += Hours;
 
-                cnn.Execute($"update StudySessions set Time = '{H}:{M}:{S}' where Date = '{date}'");
+                cnn.Execute($"update StudySessions set Time = '{H.ToString("D2")}:{M.ToString("D2")}:{S.ToString("D2")}' where Date = '{date}'");
             }
         }
 

@@ -55,6 +55,22 @@ namespace Productivity_Tool
             BtnPomodoro.Enabled = arg;
         }
 
+        private void ZenModeEventHandler(object sender, bool e)
+        {
+            //Zen mode visual configurations
+            if (e)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                MainDisplayPN.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                MainDisplayPN.Dock = DockStyle.None;
+            }
+
+        }
+
         private void BtnMain_Click(object sender, EventArgs e)
         {
             Main f = new Main();
@@ -77,6 +93,7 @@ namespace Productivity_Tool
 
             //Events
             ContextInfo.EnableBaseInterfaceEvent += EnableButtons;
+            ContextInfo.ZenModeEvent += ZenModeEventHandler;
         }
 
         private void BtnPomodoro_Click(object sender, EventArgs e)

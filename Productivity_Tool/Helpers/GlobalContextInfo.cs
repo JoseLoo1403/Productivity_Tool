@@ -11,6 +11,7 @@ namespace Productivity_Tool.Helpers
         //Events
 
         public event EventHandler<bool> EnableBaseInterfaceEvent;
+        public event EventHandler<bool> ZenModeEvent;
 
         //Global variables
 
@@ -22,6 +23,11 @@ namespace Productivity_Tool.Helpers
         public void EnableBaseInterface(bool arg)
         {
             EnableBaseInterfaceEvent?.Invoke(this,arg);
+        }
+
+        public void ZenModeInvoke(bool arg)
+        {
+            ZenModeEvent?.Invoke(this,arg);
         }
     }
 }

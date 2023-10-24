@@ -90,6 +90,7 @@
     <Compile Include="Helpers\TimerObj.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\eye-close.bmp" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +132,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Icons\eye-close.png" />
+    <None Include="Icons\eye-open.png" />
     <Content Include="Icons\house.jpg" />
   </ItemGroup>
   <ItemGroup>

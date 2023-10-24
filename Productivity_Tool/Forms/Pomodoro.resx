@@ -137,4 +137,21 @@
   <metadata name="AnimationTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>120, 17</value>
   </metadata>
+  <data name="BtnZenMode.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAAOsAAADrASts18IAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
+        AAACa0lEQVRYR+3WSchNYRzH8WuebYSQKRuKjTE7CwskKyRDlCxYKEpKGTJkwUKmJKIoGRZspJSpSIZs
+        UMrCgjJkgYQyfb+35/923uOc3Ot932tzf/Xpved/nvP8zz3nuee8lWbamLXJf8lk/EomWWh0ZiBOwM8N
+        T/MEpiFOYKqFtqRL+ltPOmELNqfP9aal5wl8xZrqVmNir2847sZTxKXciX/5NrXGue0R/R6jMhGvU0HH
+        0BntHed07uhjT3tXMwbPETtnoSzDsQjrsBu74NNwAUaiLHMQ89vLnq0yGNfxBEMtZOL2DjxDTFLGy+pJ
+        5ecYBm/3NdirpgyEl80FU9TsC1zARfusH0bNzfJZgffITnoHGzEF/REZAN8Hm3AX2WPeYj5qTg8cRXaS
+        S7BprZmOy8jOcRB/fd70husgDnqFechnHLbhTLIVY5HPQrxDzOcX6YXC9MRVxODbGIJsuuMQfiDGhe84
+        gG7IxsX3CDHuIrrij5xEDLoCb0U2PkQuIMboZZKtnUX+YdYPrv4YcwStsgqx8yaKLtMyxJgHGI/IBDxE
+        7F+MfDyJ+4gxS1CNv9dPsOg9L/vZ2NQxb+DPMx9rrnjH3LNQEHt5vGM+pu3KqVTQTAsF6YufcMxeCyXZ
+        Dsc4to+FgsxG9DttwTNx45wbJRmBOGi1hZKsRIzzkV2W83DMBze8t74WB7lREteEq9yDXOll8eo4xrH+
+        qspiL3surW7VmFtwcq/YKAu5jEaspRsW2jtz4eR6Ae+lr1j5prMW+93XIdmPaKLPSba2Dx0WHzAbEJc6
+        y9p6dOR/VC3x7efbck+yPNWaqTOVym/HLtgXl+EHEAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

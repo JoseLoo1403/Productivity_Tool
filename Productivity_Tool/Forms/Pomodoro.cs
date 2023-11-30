@@ -58,6 +58,8 @@ namespace Productivity_Tool.Forms
         private void RestartSession()
         {
             CurrentSessionCount = 0;
+            Mode = 0;
+            TimerBar.ProgressColor = Color.FromArgb(255, 128, 0);
             ReloadTimer();
 
             ConfigurationRepository repo = new ConfigurationRepository();
@@ -65,7 +67,6 @@ namespace Productivity_Tool.Forms
             repo.UpdateConfigurationByName("Current count", "0");
 
             RefreshCounter();
-            Mode = 0;
         }
 
         private void SaveCurrentInfoInContext()
@@ -94,6 +95,11 @@ namespace Productivity_Tool.Forms
         {
             BarTime = ContextInfo.CurrentTime != null ? ContextInfo.CurrentTime : new TimerObj(0, 0);
             Mode = ContextInfo.Mode;
+
+            if (CurrentSessionCount >= GoalCount)
+            {
+                SessionCompletedMode();
+            }
 
             if (Mode == 0)
             {
@@ -146,6 +152,17 @@ namespace Productivity_Tool.Forms
             CurrentSessionCount = Convert.ToInt32(repo.GetConfigurationValueByName("Current count"));
 
             SendMessage("Lets study!");
+        }
+
+        private void SessionCompletedMode()
+        {
+            timer1.Stop();
+            SendMessage($"Sessions Completed {CurrentSessionCount}/{GoalCount}");
+            BtnStop.Enabled = false;
+            BtnStart.Enabled = true;
+            BtnStart.Text = "Restart sessions";
+            WaitSecond = false;
+            ContextInfo.EnableBaseInterface(true);
         }
 
         public Pomodoro(GlobalContextInfo contextInfo)
@@ -235,14 +252,9 @@ namespace Productivity_Tool.Forms
 
                         if (CurrentSessionCount == GoalCount) //Study session completed
                         {
-                            timer1.Stop();
-                            SendMessage($"Sessions Completed {CurrentSessionCount}/{GoalCount}");
-                            BtnStop.Enabled = false;
-                            BtnStart.Enabled = true;
-                            BtnStart.Text = "Restart sessions";
+                            SessionCompletedMode();
+                            Stop_Sound.Play();
                             SaveStudyTime();
-                            WaitSecond = false;
-                            ContextInfo.EnableBaseInterface(true);
                             SaveCurrentInfoInContext();
                         }
                     }

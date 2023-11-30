@@ -82,13 +82,22 @@ namespace Productivity_Tool.Forms
         {
             ConfigurationRepository repo = new ConfigurationRepository();
 
-            string Goal, Count;
-            Goal = repo.GetConfigurationValueByName("Session Goal");
-            Count = repo.GetConfigurationValueByName("Current count");
+            int Goal, Count;
+            Goal = Convert.ToInt32(repo.GetConfigurationValueByName("Session Goal"));
+            Count = Convert.ToInt32(repo.GetConfigurationValueByName("Current count"));
 
+            if (Goal >= Count)
+            {
+                GoalBar.Maximum = Goal;
+                GoalBar.Value = Count;
+            }
+            else
+            {
 
-            GoalBar.Maximum = Convert.ToInt32(Goal);
-            GoalBar.Value = Convert.ToInt32(Count);
+                GoalBar.Maximum = Goal;
+                GoalBar.Value = Goal;
+            }
+
             GoalBar.Text = $"{Count}/{Goal}";
             LblTodayTime.Text = "Today's Study Time: " + CurrentSession.Time;
             GoalBar.Refresh();

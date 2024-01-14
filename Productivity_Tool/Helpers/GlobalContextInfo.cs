@@ -12,6 +12,7 @@ namespace Productivity_Tool.Helpers
 
         public event EventHandler<bool> EnableBaseInterfaceEvent;
         public event EventHandler<bool> ZenModeEvent;
+        public event EventHandler<bool> CreateNewSessionEvent;
 
         //Global variables
 
@@ -19,6 +20,7 @@ namespace Productivity_Tool.Helpers
         public TimerObj CurrentTime;
         public int Mode = 0;
         public int PomodoroValue = 0;
+        public DateTime CurrentDate;
 
         public void EnableBaseInterface(bool arg)
         {
@@ -28,6 +30,11 @@ namespace Productivity_Tool.Helpers
         public void ZenModeInvoke(bool arg)
         {
             ZenModeEvent?.Invoke(this,arg);
+        }
+
+        public void CreateNewSession(bool arg)
+        {
+            CreateNewSessionEvent?.Invoke(this, arg);
         }
     }
 }

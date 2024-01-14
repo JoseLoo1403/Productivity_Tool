@@ -44,7 +44,7 @@ namespace Productivity_Tool
                 config.UpdateConfigurationByName("Streak Update", DateTime.Now.ToString("yyyy/MM/dd"));
             }
 
-
+            ContextInfo.CurrentDate = DateTime.Today;
             repo.CreateSessionIfApplies();
         }
 
@@ -70,6 +70,11 @@ namespace Productivity_Tool
             }
 
         }
+        
+        private void CreateNewSessionEventHandler(object sender, bool e)
+        {
+            MakeTodaySession();
+        }
 
         private void BtnMain_Click(object sender, EventArgs e)
         {
@@ -82,7 +87,6 @@ namespace Productivity_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MakeTodaySession();
 
             Main m = new Main();
             m.Dock = DockStyle.Fill;
@@ -90,10 +94,12 @@ namespace Productivity_Tool
             m.Show();
 
             ContextInfo = new GlobalContextInfo();
+            MakeTodaySession();
 
             //Events
             ContextInfo.EnableBaseInterfaceEvent += EnableButtons;
             ContextInfo.ZenModeEvent += ZenModeEventHandler;
+            ContextInfo.CreateNewSessionEvent += CreateNewSessionEventHandler;
         }
 
         private void BtnPomodoro_Click(object sender, EventArgs e)

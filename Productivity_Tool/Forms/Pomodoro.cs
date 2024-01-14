@@ -82,9 +82,14 @@ namespace Productivity_Tool.Forms
 
             StudySessionsRepository repo = new StudySessionsRepository();
 
-            repo.AddTimeToSession(DateTime.Today.ToString("yyyy/MM/dd"), time.Hour, time.Minute, time.Seconds);
+            repo.AddTimeToSession(ContextInfo.CurrentDate.ToString("yyyy/MM/dd"), time.Hour, time.Minute, time.Seconds);
 
             ConfigurationRepository con = new ConfigurationRepository();
+
+            if (ContextInfo.CurrentDate != DateTime.Today)
+            {
+                ContextInfo.CreateNewSession(true);
+            }
 
             con.UpdateConfigurationByName("Current count", CurrentSessionCount.ToString());
 
@@ -107,6 +112,8 @@ namespace Productivity_Tool.Forms
             }
             else
             {
+
+                BtnSkip.Visible = true;
                 TimerBar.Maximum = RestTime.GetTotalSeconds();
                 TimerBar.ProgressColor = Color.FromArgb(26, 117, 255);
             }
@@ -238,6 +245,7 @@ namespace Productivity_Tool.Forms
                         ReloadTimer();
                         SendMessage("Rest...");
                         Stop_Sound.Play();
+                        BtnSkip.Visible = true;
 
                         TimerBar.ProgressColor = Color.FromArgb(26, 117, 255);
 
@@ -270,6 +278,7 @@ namespace Productivity_Tool.Forms
                         TimerBar.Maximum = StudyTime.GetTotalSeconds();
                         ReloadTimer();
                         Stop_Sound.Play();
+                        BtnSkip.Visible = false;
 
                         TimerBar.ProgressColor = Color.FromArgb(255, 128, 0);
 
@@ -369,6 +378,11 @@ namespace Productivity_Tool.Forms
                 Zen = true;
                 ContextInfo.ZenModeInvoke(true);
             }
+        }
+
+        private void BtnSkip_Click(object sender, EventArgs e)
+        {
+            TimerBar.Value = TimerBar.Maximum;
         }
     }
 }

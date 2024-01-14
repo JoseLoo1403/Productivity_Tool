@@ -31,8 +31,9 @@ namespace Productivity_Tool.Helpers
             }
             else
             {
-                Hour = 1;
-                Minute++;
+                Seconds = 0;
+                Minute = 0;
+                Hour++;
             }
 
             return GetTimeFormat();

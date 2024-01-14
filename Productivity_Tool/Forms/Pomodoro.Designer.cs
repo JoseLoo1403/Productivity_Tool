@@ -42,6 +42,7 @@
             this.LblSessionCount = new System.Windows.Forms.Label();
             this.BtnRestartCount = new System.Windows.Forms.Button();
             this.BtnZenMode = new System.Windows.Forms.Button();
+            this.BtnSkip = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnStart
@@ -136,7 +137,7 @@
             this.LblStudyInfo.AutoSize = true;
             this.LblStudyInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblStudyInfo.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.LblStudyInfo.Location = new System.Drawing.Point(160, 580);
+            this.LblStudyInfo.Location = new System.Drawing.Point(169, 580);
             this.LblStudyInfo.Name = "LblStudyInfo";
             this.LblStudyInfo.Size = new System.Drawing.Size(48, 25);
             this.LblStudyInfo.TabIndex = 6;
@@ -150,7 +151,7 @@
             this.LblRestInfo.AutoSize = true;
             this.LblRestInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblRestInfo.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.LblRestInfo.Location = new System.Drawing.Point(437, 580);
+            this.LblRestInfo.Location = new System.Drawing.Point(446, 580);
             this.LblRestInfo.Name = "LblRestInfo";
             this.LblRestInfo.Size = new System.Drawing.Size(48, 25);
             this.LblRestInfo.TabIndex = 7;
@@ -195,7 +196,7 @@
             this.BtnRestartCount.FlatAppearance.BorderSize = 2;
             this.BtnRestartCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRestartCount.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.BtnRestartCount.Location = new System.Drawing.Point(272, 631);
+            this.BtnRestartCount.Location = new System.Drawing.Point(281, 631);
             this.BtnRestartCount.Name = "BtnRestartCount";
             this.BtnRestartCount.Size = new System.Drawing.Size(237, 40);
             this.BtnRestartCount.TabIndex = 10;
@@ -218,11 +219,28 @@
             this.BtnZenMode.UseVisualStyleBackColor = false;
             this.BtnZenMode.Click += new System.EventHandler(this.BtnZenMode_Click);
             // 
+            // BtnSkip
+            // 
+            this.BtnSkip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnSkip.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSkip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(74)))), ((int)(((byte)(145)))));
+            this.BtnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSkip.Font = new System.Drawing.Font("Nirmala UI Semilight", 8F);
+            this.BtnSkip.Location = new System.Drawing.Point(372, 310);
+            this.BtnSkip.Name = "BtnSkip";
+            this.BtnSkip.Size = new System.Drawing.Size(49, 31);
+            this.BtnSkip.TabIndex = 12;
+            this.BtnSkip.Text = "Skip";
+            this.BtnSkip.UseVisualStyleBackColor = false;
+            this.BtnSkip.Visible = false;
+            this.BtnSkip.Click += new System.EventHandler(this.BtnSkip_Click);
+            // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.BtnSkip);
             this.Controls.Add(this.BtnZenMode);
             this.Controls.Add(this.BtnRestartCount);
             this.Controls.Add(this.LblSessionCount);
@@ -254,5 +272,6 @@
         private System.Windows.Forms.Label LblSessionCount;
         private System.Windows.Forms.Button BtnRestartCount;
         private System.Windows.Forms.Button BtnZenMode;
+        private System.Windows.Forms.Button BtnSkip;
     }
 }

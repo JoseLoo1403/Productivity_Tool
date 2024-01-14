@@ -62,11 +62,13 @@ namespace Productivity_Tool.Forms
                 }
                 else
                 {
-                    while(Index != x.Date)
+                    while(Index < x.Date)
                     {
                         finalTable.Add(new SessionModel(Index.ToString("yyyy/MM/dd"), 0));
                         Index = Index.AddDays(1);
                     }
+
+                    finalTable.Add(x);
                 }
 
                 Index = Index.AddDays(1);

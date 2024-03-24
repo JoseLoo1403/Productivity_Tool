@@ -203,7 +203,7 @@ namespace Productivity_Tool.Forms
 
             timer1.Start();
 
-            BtnStop.Text = "Stop";
+            BtnStop.Text = "Pause";
             BtnStop.Enabled = true;
             BtnStart.Enabled = false;
             BtnRestartCount.Enabled = false;
@@ -295,7 +295,7 @@ namespace Productivity_Tool.Forms
 
         private void BtnStop_Click(object sender, EventArgs e)
         {
-            if(BtnStop.Text == "Stop" && timer1.Enabled)
+            if(BtnStop.Text == "Pause" && timer1.Enabled)
             {
                 timer1.Stop();
                 BtnStop.Text = "Restart";
@@ -308,7 +308,8 @@ namespace Productivity_Tool.Forms
             else
             {
                 TimerBar.Value = 0;
-                BtnStop.Text = "Stop";
+                BtnStop.Text = "Pause";
+                BtnStart.Text = "Start";
                 BtnStop.Enabled = false;
                 ReloadTimer();
             }
@@ -358,7 +359,7 @@ namespace Productivity_Tool.Forms
 
             RestartSession();
             BtnStart.Text = "Start";
-            BtnStop.Text = "Stop";
+            BtnStop.Text = "Pause";
             BtnStop.Enabled = false;
         }
 

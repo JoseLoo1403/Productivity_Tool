@@ -63,7 +63,6 @@ C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.csproj.AssemblyReference.cache
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Form1.resources
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Configuration.resources
-C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.DataBase.resources
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Main.resources
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Pomodoro.resources
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Properties.Resources.resources
@@ -72,3 +71,12 @@ C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Producti.103CC37B.Up2Date
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.exe
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.Wpf.xml

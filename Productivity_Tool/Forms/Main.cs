@@ -11,7 +11,10 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using Data.Entities;
 using Data.Repositories;
+using LiveCharts.Wpf;
+using LiveCharts;
 using Productivity_Tool.Helpers;
+using LiveCharts.Defaults;
 
 namespace Productivity_Tool.Forms
 {
@@ -65,16 +68,18 @@ namespace Productivity_Tool.Forms
             MonthSession SelectedMonth = repo.GetSessionByDate(date); 
             List<SessionModel> finalTable = new List<SessionModel>();
             List<SessionModel> formatS = new List<SessionModel>();
+            List<string> Days = new List<string>();
+            ChartValues<double> studytime = new ChartValues<double>(); 
 
-            ChDailyInfo.Series["Study Hours"].Points.Clear();
 
-            LblSelectedMonth.Text = "Total time: " + SelectedMonth.TotalTime;
+            LblSelectedMonth.Text = "Month time: " + SelectedMonth.TotalTime;
 
             foreach (var x in studySessions)
             {
                 if (x.MonthId == SelectedMonth.Id)
                 {
                     formatS.Add(new SessionModel(x.Date, ConvertToHoursValue(x.Time)));
+                    Days.Add($"{x.Date[8]}{x.Date[9]}");
                 }
             }
 
@@ -102,8 +107,27 @@ namespace Productivity_Tool.Forms
 
             foreach (var x in finalTable)
             {
-                ChDailyInfo.Series["Study Hours"].Points.AddXY(x.Date.ToString("dd"), x.Time);
+                studytime.Add(x.Time);
+                Days.Add(x.Date.ToString("dd"));
             }
+
+            MonthGraph.Series.Clear();
+
+            MonthGraph.Series.Add(new LineSeries
+            {
+                Values = studytime,
+                PointGeometrySize = 7,
+                Title = "Study hours: "
+            });
+
+            MonthGraph.AxisY.Clear();
+
+            MonthGraph.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Hours",
+                LabelFormatter = value => value.ToString("N2"),
+                MinValue = 0
+            });
         }
 
         private void LoadGoal()
@@ -145,6 +169,7 @@ namespace Productivity_Tool.Forms
             LoadDayStreak();
             LoadGoal();
             LoadGraphData(DateTime.Today.ToString("yyyy/MM"));
+            MonthGraph.Visible = true;
         }
 
         private void CbMonth_SelectedIndexChanged(object sender, EventArgs e)

@@ -20,8 +20,23 @@ namespace Productivity_Tool
             InitializeComponent();
         }
 
+        private void CreateMonthSessionIfApplies()
+        {
+            ConfigurationRepository config = new ConfigurationRepository();
+            MonthSessionRepository repo = new MonthSessionRepository();
+
+            if (config.GetConfigurationValueByName("Month Update") != DateTime.Today.Month.ToString())
+            {
+                repo.CreateNewMonthSession();
+                config.UpdateConfigurationByName("Month Update", DateTime.Today.Month.ToString());
+            }
+
+            ContextInfo.MonthId = repo.GetLastId();
+        }
+
         private void MakeTodaySession()
         {
+            CreateMonthSessionIfApplies();
             StudySessionsRepository repo = new StudySessionsRepository();
             ConfigurationRepository config = new ConfigurationRepository();
 
@@ -45,7 +60,7 @@ namespace Productivity_Tool
             }
 
             ContextInfo.CurrentDate = DateTime.Today;
-            repo.CreateSessionIfApplies();
+            repo.CreateSessionIfApplies(ContextInfo.MonthId);
         }
 
         private void EnableButtons(object sender, bool arg)
@@ -78,6 +93,11 @@ namespace Productivity_Tool
 
         private void BtnMain_Click(object sender, EventArgs e)
         {
+            if (this.MainDisplayPN.Controls[0].Name == "Main")
+            {
+                return;
+            }
+
             Main f = new Main();
             f.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.RemoveAt(0);
@@ -87,14 +107,13 @@ namespace Productivity_Tool
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ContextInfo = new GlobalContextInfo();
+            MakeTodaySession();
 
             Main m = new Main();
             m.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.Add(m);
             m.Show();
-
-            ContextInfo = new GlobalContextInfo();
-            MakeTodaySession();
 
             //Events
             ContextInfo.EnableBaseInterfaceEvent += EnableButtons;
@@ -104,6 +123,11 @@ namespace Productivity_Tool
 
         private void BtnPomodoro_Click(object sender, EventArgs e)
         {
+            if (this.MainDisplayPN.Controls[0].Name == "Pomodoro")
+            {
+                return;
+            }
+
             Pomodoro f = new Pomodoro(ContextInfo);
             f.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.RemoveAt(0);
@@ -111,22 +135,13 @@ namespace Productivity_Tool
             f.Show();
         }
 
-        private void HoverEffect(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-
-            btn.BackColor = Color.FromArgb(8, 92, 175);
-        }
-
-        private void HoverEffectExit(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-
-            btn.BackColor = Color.FromArgb(5, 74, 145);
-        }
-
         private void BtnConfiguration_Click(object sender, EventArgs e)
         {
+            if (this.MainDisplayPN.Controls[0].Name == "Configuration")
+            {
+                return;
+            }
+
             Configuration f = new Configuration();
             f.Dock = DockStyle.Fill;
             this.MainDisplayPN.Controls.RemoveAt(0);

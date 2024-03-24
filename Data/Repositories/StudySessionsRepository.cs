@@ -50,11 +50,13 @@ namespace Data.Repositories
                 H += Hours;
 
                 cnn.Execute($"update StudySessions set Time = '{H.ToString("D2")}:{M.ToString("D2")}:{S.ToString("D2")}' where Date = '{date}'");
+                MonthSessionRepository repo = new MonthSessionRepository();
+                repo.AddTimeToCurrentSession(Hours, minutes, seconds);
             }
         }
 
 
-        public void CreateSessionIfApplies()
+        public void CreateSessionIfApplies(int monthId)
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
             {
@@ -65,7 +67,7 @@ namespace Data.Repositories
                     return;
                 }
 
-                cnn.Execute($"insert into StudySessions values ('{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0')");
+                cnn.Execute($"insert into StudySessions values ('{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0','{monthId}')");
                 cnn.Execute("update Configurations set Value = '0' where Name = 'Current count'");
             }
         }
@@ -74,7 +76,7 @@ namespace Data.Repositories
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString())) 
             {
-                var output = cnn.Query<StudySessions>("select Date,Time from StudySessions", new DynamicParameters());
+                var output = cnn.Query<StudySessions>("select * from StudySessions", new DynamicParameters());
 
                 return output.ToList();
             }

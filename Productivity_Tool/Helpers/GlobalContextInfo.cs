@@ -21,6 +21,7 @@ namespace Productivity_Tool.Helpers
         public int Mode = 0;
         public int PomodoroValue = 0;
         public DateTime CurrentDate;
+        public int MonthId;
 
         public void EnableBaseInterface(bool arg)
         {

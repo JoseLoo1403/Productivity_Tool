@@ -20,3 +20,14 @@ C:\Users\Jose Loo\Desktop\Productivity\Projects\Productivity_Tool\Data\obj\Debug
 C:\Users\Jose Loo\Desktop\Productivity\Projects\Productivity_Tool\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\Jose Loo\Desktop\Productivity\Projects\Productivity_Tool\Data\obj\Debug\Data.dll
 C:\Users\Jose Loo\Desktop\Productivity\Projects\Productivity_Tool\Data\obj\Debug\Data.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\bin\Debug\Data.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\bin\Debug\Data.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\bin\Debug\Dapper.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\bin\Debug\Dapper.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\obj\Debug\Data.csproj.Up2Date
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\obj\Debug\Data.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Data\obj\Debug\Data.pdb

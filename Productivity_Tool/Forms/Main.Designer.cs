@@ -35,6 +35,9 @@
             this.GoalBar = new CircularProgressBar.CircularProgressBar();
             this.ChDailyInfo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.LblTodayTime = new System.Windows.Forms.Label();
+            this.CbMonth = new System.Windows.Forms.ComboBox();
+            this.LblMonthTime = new System.Windows.Forms.Label();
+            this.LblSelectedMonth = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ChDailyInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,16 +95,17 @@
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Name = "Legend1";
             this.ChDailyInfo.Legends.Add(legend1);
-            this.ChDailyInfo.Location = new System.Drawing.Point(42, 262);
+            this.ChDailyInfo.Location = new System.Drawing.Point(42, 321);
             this.ChDailyInfo.Name = "ChDailyInfo";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Legend = "Legend1";
             series1.MarkerColor = System.Drawing.Color.RoyalBlue;
             series1.MarkerSize = 6;
             series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series1.Name = "Study Hours";
+            series1.YValuesPerPoint = 4;
             this.ChDailyInfo.Series.Add(series1);
             this.ChDailyInfo.Size = new System.Drawing.Size(661, 355);
             this.ChDailyInfo.TabIndex = 2;
@@ -117,10 +121,46 @@
             this.LblTodayTime.TabIndex = 3;
             this.LblTodayTime.Text = "Today\'s Study Time: 0";
             // 
+            // CbMonth
+            // 
+            this.CbMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbMonth.Font = new System.Drawing.Font("Nirmala UI Semilight", 10F);
+            this.CbMonth.FormattingEnabled = true;
+            this.CbMonth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CbMonth.Location = new System.Drawing.Point(530, 339);
+            this.CbMonth.Name = "CbMonth";
+            this.CbMonth.Size = new System.Drawing.Size(143, 31);
+            this.CbMonth.TabIndex = 4;
+            this.CbMonth.SelectedIndexChanged += new System.EventHandler(this.CbMonth_SelectedIndexChanged);
+            // 
+            // LblMonthTime
+            // 
+            this.LblMonthTime.AutoSize = true;
+            this.LblMonthTime.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblMonthTime.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
+            this.LblMonthTime.Location = new System.Drawing.Point(36, 205);
+            this.LblMonthTime.Name = "LblMonthTime";
+            this.LblMonthTime.Size = new System.Drawing.Size(218, 31);
+            this.LblMonthTime.TabIndex = 5;
+            this.LblMonthTime.Text = "Month Study Time: 0";
+            // 
+            // LblSelectedMonth
+            // 
+            this.LblSelectedMonth.AutoSize = true;
+            this.LblSelectedMonth.Cursor = System.Windows.Forms.Cursors.Default;
+            this.LblSelectedMonth.Font = new System.Drawing.Font("Nirmala UI Semilight", 8.8F);
+            this.LblSelectedMonth.Location = new System.Drawing.Point(208, 337);
+            this.LblSelectedMonth.Name = "LblSelectedMonth";
+            this.LblSelectedMonth.Size = new System.Drawing.Size(0, 20);
+            this.LblSelectedMonth.TabIndex = 6;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LblSelectedMonth);
+            this.Controls.Add(this.LblMonthTime);
+            this.Controls.Add(this.CbMonth);
             this.Controls.Add(this.LblTodayTime);
             this.Controls.Add(this.ChDailyInfo);
             this.Controls.Add(this.GoalBar);
@@ -140,5 +180,8 @@
         private CircularProgressBar.CircularProgressBar GoalBar;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChDailyInfo;
         private System.Windows.Forms.Label LblTodayTime;
+        private System.Windows.Forms.ComboBox CbMonth;
+        private System.Windows.Forms.Label LblMonthTime;
+        private System.Windows.Forms.Label LblSelectedMonth;
     }
 }

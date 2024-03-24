@@ -64,9 +64,9 @@
             this.lblVersion.ForeColor = System.Drawing.Color.White;
             this.lblVersion.Location = new System.Drawing.Point(83, 698);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(89, 20);
+            this.lblVersion.Size = new System.Drawing.Size(91, 20);
             this.lblVersion.TabIndex = 4;
-            this.lblVersion.Text = "Version: 0.1.1";
+            this.lblVersion.Text = "Version: 0.1.2";
             // 
             // pictureBox1
             // 
@@ -84,6 +84,7 @@
             // 
             this.BtnConfiguration.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnConfiguration.FlatAppearance.BorderSize = 0;
+            this.BtnConfiguration.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(114)))), ((int)(((byte)(214)))));
             this.BtnConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfiguration.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfiguration.ForeColor = System.Drawing.Color.White;
@@ -96,13 +97,12 @@
             this.BtnConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnConfiguration.UseVisualStyleBackColor = false;
             this.BtnConfiguration.Click += new System.EventHandler(this.BtnConfiguration_Click);
-            this.BtnConfiguration.MouseEnter += new System.EventHandler(this.HoverEffect);
-            this.BtnConfiguration.MouseLeave += new System.EventHandler(this.HoverEffectExit);
             // 
             // BtnPomodoro
             // 
             this.BtnPomodoro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnPomodoro.FlatAppearance.BorderSize = 0;
+            this.BtnPomodoro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(114)))), ((int)(((byte)(214)))));
             this.BtnPomodoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPomodoro.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPomodoro.ForeColor = System.Drawing.Color.White;
@@ -115,27 +115,24 @@
             this.BtnPomodoro.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnPomodoro.UseVisualStyleBackColor = false;
             this.BtnPomodoro.Click += new System.EventHandler(this.BtnPomodoro_Click);
-            this.BtnPomodoro.MouseEnter += new System.EventHandler(this.HoverEffect);
-            this.BtnPomodoro.MouseLeave += new System.EventHandler(this.HoverEffectExit);
             // 
             // BtnMain
             // 
             this.BtnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnMain.FlatAppearance.BorderSize = 0;
+            this.BtnMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(114)))), ((int)(((byte)(214)))));
             this.BtnMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMain.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.BtnMain.ForeColor = System.Drawing.Color.White;
             this.BtnMain.Image = ((System.Drawing.Image)(resources.GetObject("BtnMain.Image")));
-            this.BtnMain.Location = new System.Drawing.Point(3, 318);
+            this.BtnMain.Location = new System.Drawing.Point(-3, 318);
             this.BtnMain.Name = "BtnMain";
-            this.BtnMain.Size = new System.Drawing.Size(273, 49);
+            this.BtnMain.Size = new System.Drawing.Size(279, 49);
             this.BtnMain.TabIndex = 0;
             this.BtnMain.Text = "Main              ";
             this.BtnMain.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnMain.UseVisualStyleBackColor = false;
             this.BtnMain.Click += new System.EventHandler(this.BtnMain_Click);
-            this.BtnMain.MouseEnter += new System.EventHandler(this.HoverEffect);
-            this.BtnMain.MouseLeave += new System.EventHandler(this.HoverEffectExit);
             // 
             // MainDisplayPN
             // 
@@ -161,6 +158,7 @@
             // 
             this.BtnMinimize.BackColor = System.Drawing.Color.Transparent;
             this.BtnMinimize.FlatAppearance.BorderSize = 0;
+            this.BtnMinimize.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.BtnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMinimize.Location = new System.Drawing.Point(975, 0);
@@ -175,6 +173,7 @@
             // 
             this.BtnExit.BackColor = System.Drawing.Color.Transparent;
             this.BtnExit.FlatAppearance.BorderSize = 0;
+            this.BtnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.BtnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExit.Location = new System.Drawing.Point(1023, 0);

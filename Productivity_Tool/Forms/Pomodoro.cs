@@ -81,7 +81,7 @@ namespace Productivity_Tool.Forms
             var time = Temp_Timer;
 
             StudySessionsRepository repo = new StudySessionsRepository();
-
+            
             repo.AddTimeToSession(ContextInfo.CurrentDate.ToString("yyyy/MM/dd"), time.Hour, time.Minute, time.Seconds);
 
             ConfigurationRepository con = new ConfigurationRepository();

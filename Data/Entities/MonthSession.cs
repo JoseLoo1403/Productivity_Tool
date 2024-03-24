@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Data.Entities
 {
-    public class StudySessions
+    public class MonthSession
     {
+        public int Id { get; set; }
         public string Date { get; set; }
-        public string Time { get; set; }
-
-        public int MonthId { get; set; }
+        public string TotalTime { get; set; }
     }
 }

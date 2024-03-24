@@ -18,6 +18,7 @@ namespace Productivity_Tool.Forms
     public partial class Main : UserControl
     {
         StudySessions CurrentSession;
+        MonthSession CurrentmonthSession;
         public Main()
         {
             InitializeComponent();
@@ -42,14 +43,39 @@ namespace Productivity_Tool.Forms
         private void CreateFormatData()
         {
             List<StudySessions> studySessions = GetAllSessions();
+            MonthSessionRepository repo = new MonthSessionRepository();
+
+            CurrentSession = studySessions.LastOrDefault();
+            CurrentmonthSession = repo.GetSessionByDate(DateTime.Now.ToString("yyyy/MM"));
+
+            List<string> format = repo.GetDates();
+
+            foreach (string x in format)
+            {
+                CbMonth.Items.Add(x);
+            }
+
+            CbMonth.Text = DateTime.Today.ToString("yyyy/MM");
+        }
+
+        private void LoadGraphData(string date)
+        {
+            List<StudySessions> studySessions = GetAllSessions();
+            MonthSessionRepository repo = new MonthSessionRepository();
+            MonthSession SelectedMonth = repo.GetSessionByDate(date); 
             List<SessionModel> finalTable = new List<SessionModel>();
             List<SessionModel> formatS = new List<SessionModel>();
 
-            CurrentSession = studySessions.LastOrDefault();
+            ChDailyInfo.Series["Study Hours"].Points.Clear();
+
+            LblSelectedMonth.Text = "Total time: " + SelectedMonth.TotalTime;
 
             foreach (var x in studySessions)
             {
-                formatS.Add(new SessionModel(x.Date, ConvertToHoursValue(x.Time)));
+                if (x.MonthId == SelectedMonth.Id)
+                {
+                    formatS.Add(new SessionModel(x.Date, ConvertToHoursValue(x.Time)));
+                }
             }
 
             DateTime Index = formatS.FirstOrDefault().Date;
@@ -62,7 +88,7 @@ namespace Productivity_Tool.Forms
                 }
                 else
                 {
-                    while(Index < x.Date)
+                    while (Index < x.Date)
                     {
                         finalTable.Add(new SessionModel(Index.ToString("yyyy/MM/dd"), 0));
                         Index = Index.AddDays(1);
@@ -76,7 +102,7 @@ namespace Productivity_Tool.Forms
 
             foreach (var x in finalTable)
             {
-                ChDailyInfo.Series["Study Hours"].Points.AddXY(x.Date.ToString("yyyy/MM/dd"),x.Time);
+                ChDailyInfo.Series["Study Hours"].Points.AddXY(x.Date.ToString("dd"), x.Time);
             }
         }
 
@@ -102,6 +128,7 @@ namespace Productivity_Tool.Forms
 
             GoalBar.Text = $"{Count}/{Goal}";
             LblTodayTime.Text = "Today's Study Time: " + CurrentSession.Time;
+            LblMonthTime.Text = "Month Study Time: " + CurrentmonthSession.TotalTime;
             GoalBar.Refresh();
         }
 
@@ -109,7 +136,7 @@ namespace Productivity_Tool.Forms
         {
             ConfigurationRepository repo = new ConfigurationRepository();
 
-            LblStreak.Text = "Day-Streak: " + repo.GetConfigurationValueByName("Day Streak");
+            LblStreak.Text = "Day-Streak: " + repo.GetConfigurationValueByName("Day Streak") + " 🔥";
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -117,6 +144,12 @@ namespace Productivity_Tool.Forms
             CreateFormatData();
             LoadDayStreak();
             LoadGoal();
+            LoadGraphData(DateTime.Today.ToString("yyyy/MM"));
+        }
+
+        private void CbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadGraphData(CbMonth.Text);
         }
     }
 }

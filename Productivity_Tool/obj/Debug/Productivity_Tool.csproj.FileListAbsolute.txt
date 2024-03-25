@@ -80,3 +80,38 @@ C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\bin\Debug\Guna.UI2.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Database.db
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Productivity_Tool.exe.config
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Productivity_Tool.exe
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Productivity_Tool.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\CircularProgressBar.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Data.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Guna.UI2.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\System.Data.SQLite.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\WinFormAnimation.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Dapper.dll
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Data.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\CircularProgressBar.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\System.Data.SQLite.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\bin\Debug\Dapper.xml
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.csproj.AssemblyReference.cache
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.Form1.resources
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Configuration.resources
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Main.resources
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.Pomodoro.resources
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.Properties.Resources.resources
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.csproj.GenerateResource.cache
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.csproj.CoreCompileInputs.cache
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Producti.103CC37B.Up2Date
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.exe
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.pdb

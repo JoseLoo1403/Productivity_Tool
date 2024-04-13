@@ -14,6 +14,8 @@ namespace Productivity_Tool.Forms
     {
         StudySessions CurrentSession;
         MonthSession CurrentmonthSession;
+        List<SessionModel> TableData;
+        int GraphType = 0; //0 is lines 1 is bars
         public Main()
         {
             InitializeComponent();
@@ -97,7 +99,17 @@ namespace Productivity_Tool.Forms
                 Index = Index.AddDays(1);
             }
 
-            foreach (var x in finalTable)
+            TableData = finalTable;
+
+            DisplayGraph();
+        }
+
+        private void DisplayGraph()
+        {
+            ChartValues<double> studytime = new ChartValues<double>();
+            List<string> Days = new List<string>();
+
+            foreach (var x in TableData)
             {
                 studytime.Add(x.Time);
                 Days.Add(x.Date.ToString("dd"));
@@ -105,12 +117,23 @@ namespace Productivity_Tool.Forms
 
             MonthGraph.Series.Clear();
 
-            MonthGraph.Series.Add(new LineSeries
+            if (GraphType == 0)
             {
-                Values = studytime,
-                PointGeometrySize = 7,
-                Title = "Study hours: "
-            });
+                MonthGraph.Series.Add(new LineSeries
+                {
+                    Values = studytime,
+                    PointGeometrySize = 7,
+                    Title = "Study hours: "
+                });
+            }
+            else if (GraphType == 1) 
+            {
+                MonthGraph.Series.Add(new ColumnSeries
+                {
+                    Values = studytime,
+                    Title = "Study hours: "
+                });
+            }
 
             MonthGraph.AxisX.Clear();
 
@@ -170,11 +193,18 @@ namespace Productivity_Tool.Forms
             LoadGoal();
             LoadGraphData(DateTime.Today.ToString("yyyy/MM"));
             MonthGraph.Visible = true;
+            GraphType = 0;
         }
 
         private void CbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadGraphData(CbMonth.Text);
+        }
+
+        private void BtnGraphView_Click(object sender, EventArgs e)
+        {
+            GraphType = GraphType == 0 ? 1 : 0;
+            DisplayGraph();
         }
     }
 }

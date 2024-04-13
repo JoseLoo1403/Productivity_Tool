@@ -35,6 +35,7 @@
             this.LblMonthTime = new System.Windows.Forms.Label();
             this.LblSelectedMonth = new System.Windows.Forms.Label();
             this.MonthGraph = new LiveCharts.WinForms.CartesianChart();
+            this.BtnGraphView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LblStreak
@@ -132,10 +133,21 @@
             this.MonthGraph.TabIndex = 7;
             this.MonthGraph.Visible = false;
             // 
+            // BtnGraphView
+            // 
+            this.BtnGraphView.Location = new System.Drawing.Point(479, 274);
+            this.BtnGraphView.Name = "BtnGraphView";
+            this.BtnGraphView.Size = new System.Drawing.Size(38, 28);
+            this.BtnGraphView.TabIndex = 8;
+            this.BtnGraphView.Text = "G";
+            this.BtnGraphView.UseVisualStyleBackColor = true;
+            this.BtnGraphView.Click += new System.EventHandler(this.BtnGraphView_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnGraphView);
             this.Controls.Add(this.MonthGraph);
             this.Controls.Add(this.LblSelectedMonth);
             this.Controls.Add(this.LblMonthTime);
@@ -160,5 +172,6 @@
         private System.Windows.Forms.Label LblMonthTime;
         private System.Windows.Forms.Label LblSelectedMonth;
         private LiveCharts.WinForms.CartesianChart MonthGraph;
+        private System.Windows.Forms.Button BtnGraphView;
     }
 }

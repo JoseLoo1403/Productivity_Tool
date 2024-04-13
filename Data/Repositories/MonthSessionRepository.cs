@@ -27,9 +27,9 @@ namespace Data.Repositories
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
             {
-                var id = cnn.Query<int>("select id from MonthSession last_value");
+                var id = cnn.Query<int>("select id from MonthSession");
 
-                var output = cnn.Query<string>($"select TotalTime from MonthSession where Id = '{id.FirstOrDefault()}'", new DynamicParameters());
+                var output = cnn.Query<string>($"select TotalTime from MonthSession where Id = '{id.LastOrDefault()}'", new DynamicParameters());
 
                 output.ToList();
 
@@ -61,7 +61,7 @@ namespace Data.Repositories
 
                 H += Hours;
 
-                cnn.Execute($"update MonthSession set TotalTime = '{H.ToString("D2")}:{M.ToString("D2")}:{S.ToString("D2")}' where Id = '{id.FirstOrDefault()}'");
+                cnn.Execute($"update MonthSession set TotalTime = '{H.ToString("D2")}:{M.ToString("D2")}:{S.ToString("D2")}' where Id = '{id.LastOrDefault()}'");
             }
         }
 
@@ -71,7 +71,7 @@ namespace Data.Repositories
             {
                 var id = cnn.Query<int>("select id from MonthSession last_value");
 
-                return id.FirstOrDefault();
+                return id.LastOrDefault();
             }
         }
 

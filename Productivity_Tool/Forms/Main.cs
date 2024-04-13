@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
 using Data.Entities;
 using Data.Repositories;
 using LiveCharts.Wpf;
 using LiveCharts;
 using Productivity_Tool.Helpers;
-using LiveCharts.Defaults;
 
 namespace Productivity_Tool.Forms
 {
@@ -120,13 +112,21 @@ namespace Productivity_Tool.Forms
                 Title = "Study hours: "
             });
 
+            MonthGraph.AxisX.Clear();
+
+            MonthGraph.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Labels = Days,
+                MinValue = 0
+            });
+
             MonthGraph.AxisY.Clear();
 
             MonthGraph.AxisY.Add(new LiveCharts.Wpf.Axis
             {
                 Title = "Hours",
                 LabelFormatter = value => value.ToString("N2"),
-                MinValue = 0
+                MinValue = 0,
             });
         }
 

@@ -1,18 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\",
+  "WorkspaceRootPath": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool - copy\\productivity_tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\productivity_tool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\productivity_tool\\forms\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\forms\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}|Data\\Data.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\data\\repositories\\monthsessionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}|Data\\Data.csproj|solutionrelative:data\\repositories\\monthsessionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\productivity_tool\\forms\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\forms\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}|Data\\Data.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\data\\repositories\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}|Data\\Data.csproj|solutionrelative:data\\repositories\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\productivity_tool\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,42 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 220,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Pomodoro.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\Productivity_Tool\\Forms\\Pomodoro.cs",
-              "RelativeDocumentMoniker": "Productivity_Tool\\Forms\\Pomodoro.cs",
-              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\Pomodoro.cs [Design]",
-              "RelativeToolTip": "..\\Productivity_Tool\\Productivity_Tool\\Forms\\Pomodoro.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Program.cs",
+              "RelativeDocumentMoniker": "Productivity_Tool\\Program.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Program.cs",
+              "RelativeToolTip": "Productivity_Tool\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAgwBoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T04:03:18.942Z"
+              "WhenOpened": "2024-04-10T07:00:34.909Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\Productivity_Tool\\Form1.cs",
-              "RelativeDocumentMoniker": "Productivity_Tool\\Form1.cs",
-              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\Productivity_Tool\\Form1.cs [Design]",
-              "RelativeToolTip": "Productivity_Tool\\Form1.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "MonthSessionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Data\\Repositories\\MonthSessionRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\MonthSessionRepository.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Data\\Repositories\\MonthSessionRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\MonthSessionRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T06:39:22.979Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-10T06:44:30.669Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Pomodoro.cs",
-              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\Productivity_Tool\\Forms\\Pomodoro.cs",
-              "RelativeDocumentMoniker": "Productivity_Tool\\Forms\\Pomodoro.cs",
-              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool - Copy\\Productivity_Tool\\Forms\\Pomodoro.cs",
-              "RelativeToolTip": "Productivity_Tool\\Forms\\Pomodoro.cs",
-              "ViewState": "AQIAABcBAAAAAAAAAAAowCkBAAAMAAAA",
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Data\\Repositories\\DbContext.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\DbContext.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Data\\Repositories\\DbContext.cs",
+              "RelativeToolTip": "Data\\Repositories\\DbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T05:48:16.808Z"
+              "WhenOpened": "2024-04-10T06:44:29.451Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\App.config",
+              "RelativeDocumentMoniker": "Productivity_Tool\\App.config",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\App.config",
+              "RelativeToolTip": "Productivity_Tool\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-04-10T06:41:04.358Z",
+              "EditorCaption": ""
             }
           ]
         }

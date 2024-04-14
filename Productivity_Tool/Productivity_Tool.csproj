@@ -130,6 +130,8 @@
     <Compile Include="Helpers\TimerObj.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Icons\graph.png" />
+    <None Include="Icons\statistics.png" />
     <Content Include="Logo_app.ico" />
     <None Include="Resources\eye-close.bmp" />
     <EmbeddedResource Include="Form1.resx">
@@ -174,7 +176,6 @@
   <ItemGroup>
     <None Include="Icons\eye-close.png" />
     <None Include="Icons\eye-open.png" />
-    <Content Include="Icons\house.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">

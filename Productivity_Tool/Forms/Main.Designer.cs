@@ -135,18 +135,23 @@
             // 
             // BtnGraphView
             // 
-            this.BtnGraphView.Location = new System.Drawing.Point(479, 274);
+            this.BtnGraphView.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGraphView.BackgroundImage = global::Productivity_Tool.Properties.Resources.statistics;
+            this.BtnGraphView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnGraphView.FlatAppearance.BorderSize = 0;
+            this.BtnGraphView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGraphView.Location = new System.Drawing.Point(463, 268);
             this.BtnGraphView.Name = "BtnGraphView";
-            this.BtnGraphView.Size = new System.Drawing.Size(38, 28);
+            this.BtnGraphView.Size = new System.Drawing.Size(48, 40);
             this.BtnGraphView.TabIndex = 8;
-            this.BtnGraphView.Text = "G";
-            this.BtnGraphView.UseVisualStyleBackColor = true;
+            this.BtnGraphView.UseVisualStyleBackColor = false;
             this.BtnGraphView.Click += new System.EventHandler(this.BtnGraphView_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.BtnGraphView);
             this.Controls.Add(this.MonthGraph);
             this.Controls.Add(this.LblSelectedMonth);

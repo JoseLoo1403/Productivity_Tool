@@ -7,6 +7,8 @@ using Data.Repositories;
 using LiveCharts.Wpf;
 using LiveCharts;
 using Productivity_Tool.Helpers;
+using System.Windows.Media;
+using System.Drawing;
 
 namespace Productivity_Tool.Forms
 {
@@ -126,12 +128,12 @@ namespace Productivity_Tool.Forms
                     Title = "Study hours: "
                 });
             }
-            else if (GraphType == 1) 
+            else if (GraphType == 1)
             {
                 MonthGraph.Series.Add(new ColumnSeries
                 {
                     Values = studytime,
-                    Title = "Study hours: "
+                    Title = "Study hours: ",
                 });
             }
 
@@ -173,7 +175,7 @@ namespace Productivity_Tool.Forms
                 GoalBar.Value = Goal;
             }
 
-            GoalBar.Text = $"{Count}/{Goal}";
+            GoalBar.Text = $"Goal: {Count}/{Goal}";
             LblTodayTime.Text = "Today's Study Time: " + CurrentSession.Time;
             LblMonthTime.Text = "Month Study Time: " + CurrentmonthSession.TotalTime;
             GoalBar.Refresh();
@@ -203,7 +205,17 @@ namespace Productivity_Tool.Forms
 
         private void BtnGraphView_Click(object sender, EventArgs e)
         {
-            GraphType = GraphType == 0 ? 1 : 0;
+            GraphType = GraphType == 0 ? 1 : 0; //0 lines       1 bars
+            
+            if (GraphType == 0) 
+            {
+                BtnGraphView.BackgroundImage = Properties.Resources.statistics;
+            }
+            else
+            {
+                BtnGraphView.BackgroundImage = Properties.Resources.graph;
+            }
+
             DisplayGraph();
         }
     }

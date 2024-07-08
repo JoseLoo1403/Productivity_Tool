@@ -12,6 +12,7 @@ using Data.Repositories;
 using Productivity_Tool.Helpers;
 using System.Media;
 using Productivity_Tool.Properties;
+using Data.Entities;
 
 namespace Productivity_Tool.Forms
 {
@@ -28,6 +29,7 @@ namespace Productivity_Tool.Forms
         SoundPlayer Stop_Sound;
         GlobalContextInfo ContextInfo;
         bool Zen = false;
+        int CurrentTaskSessionId;
 
         int CurrentSessionCount = 0;
         int GoalCount = 3;
@@ -74,6 +76,8 @@ namespace Productivity_Tool.Forms
             ContextInfo.CurrentTime = BarTime;
             ContextInfo.Mode = Mode;
             ContextInfo.PomodoroValue = TimerBar.Value;
+            ContextInfo.CurrentTaskId = CurrentTaskSessionId;
+            ContextInfo.CurrentTaskName = CbTasks.Text;
         }
 
         private void SaveStudyTime()
@@ -81,8 +85,10 @@ namespace Productivity_Tool.Forms
             var time = Temp_Timer;
 
             StudySessionsRepository repo = new StudySessionsRepository();
+            TaskSessionsRepository Trepo = new TaskSessionsRepository();
             
             repo.AddTimeToSession(ContextInfo.CurrentDate.ToString("yyyy/MM/dd"), time.Hour, time.Minute, time.Seconds);
+            Trepo.AddTimeToTaskSession(CurrentTaskSessionId, time.Hour, time.Minute, time.Seconds);
 
             ConfigurationRepository con = new ConfigurationRepository();
 
@@ -100,6 +106,7 @@ namespace Productivity_Tool.Forms
         {
             BarTime = ContextInfo.CurrentTime != null ? ContextInfo.CurrentTime : new TimerObj(0, 0);
             Mode = ContextInfo.Mode;
+            CurrentTaskSessionId = ContextInfo.CurrentTaskId;
 
             if (CurrentSessionCount >= GoalCount)
             {
@@ -133,6 +140,8 @@ namespace Productivity_Tool.Forms
             {
                 BtnStop.Enabled = false;
             }
+
+            CbTasks.Text = ContextInfo.CurrentTaskName;
         }
 
         private void LoadStudyConfigurations()
@@ -161,6 +170,19 @@ namespace Productivity_Tool.Forms
             SendMessage("Lets study!");
         }
 
+        private void LoadTasksInformation()
+        {
+            TaskRepository repo = new TaskRepository();
+
+            var items = repo.GetAllTasks();
+
+            CbTasks.Items.Clear();
+            foreach (var x in items)
+            {
+                CbTasks.Items.Add(x.Name);
+            }
+        }
+
         private void SessionCompletedMode()
         {
             timer1.Stop();
@@ -185,6 +207,7 @@ namespace Productivity_Tool.Forms
             Temp_Timer = new TimerObj(0,0);
 
             LoadStudyConfigurations();
+            LoadTasksInformation();
             LoadPresavedInformation();
             WaitSecond = false;
 
@@ -194,6 +217,12 @@ namespace Productivity_Tool.Forms
 
         private void BtnStart_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(CbTasks.Text))
+            {
+                SendMessage("Please first select a task to perform");
+                return;
+            }
+
             if (CurrentSessionCount >= GoalCount)
             {
                 BtnStart.Text = "Start";
@@ -384,6 +413,14 @@ namespace Productivity_Tool.Forms
         private void BtnSkip_Click(object sender, EventArgs e)
         {
             TimerBar.Value = TimerBar.Maximum;
+        }
+
+        private void CbTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaskSessionsRepository repo = new TaskSessionsRepository();
+            TaskRepository Trepo = new TaskRepository();
+
+            CurrentTaskSessionId = repo.GetTodayTaskSessionOrCreate(Trepo.GetTaskByName(CbTasks.Text).Id).Id;
         }
     }
 }

@@ -61,14 +61,16 @@ namespace Data.Repositories
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
             {
                 var output = cnn.Query<StudySessions>($"select Date,Time from StudySessions where Date = '{DateTime.Today.ToString("yyyy/MM/dd")}'", new DynamicParameters());
+                int id = cnn.Query<int>("SELECT seq FROM sqlite_sequence WHERE name = 'StudySessions'", new DynamicParameters()).FirstOrDefault();
 
                 if (output.Count() > 0)
                 {
                     return;
                 }
 
-                cnn.Execute($"insert into StudySessions values ('{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0','{monthId}')");
+                cnn.Execute($"insert into StudySessions values ({id},'{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0','{monthId}')");
                 cnn.Execute("update Configurations set Value = '0' where Name = 'Current count'");
+                cnn.Execute($"UPDATE sqlite_sequence SET seq = {id++} WHERE name = 'StudySessions'");
             }
         }
 

@@ -115,3 +115,4 @@ C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\ob
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Producti.103CC37B.Up2Date
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.exe
 C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool - Copy\Productivity_Tool\obj\Debug\Productivity_Tool.pdb
+C:\Users\Jose Loo\Desktop\Projects\Productivity_Tool\Productivity_Tool\obj\Debug\Productivity_Tool.Forms.TasksView.resources

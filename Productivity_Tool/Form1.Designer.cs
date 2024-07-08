@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.NavBarPN = new System.Windows.Forms.Panel();
+            this.BtnTasks = new System.Windows.Forms.Button();
             this.lblVersion = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnConfiguration = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             // NavBarPN
             // 
             this.NavBarPN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(74)))), ((int)(((byte)(145)))));
+            this.NavBarPN.Controls.Add(this.BtnTasks);
             this.NavBarPN.Controls.Add(this.lblVersion);
             this.NavBarPN.Controls.Add(this.pictureBox1);
             this.NavBarPN.Controls.Add(this.BtnConfiguration);
@@ -57,6 +59,24 @@
             this.NavBarPN.Size = new System.Drawing.Size(276, 727);
             this.NavBarPN.TabIndex = 1;
             // 
+            // BtnTasks
+            // 
+            this.BtnTasks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnTasks.FlatAppearance.BorderSize = 0;
+            this.BtnTasks.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(114)))), ((int)(((byte)(214)))));
+            this.BtnTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTasks.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTasks.ForeColor = System.Drawing.Color.White;
+            this.BtnTasks.Image = ((System.Drawing.Image)(resources.GetObject("BtnTasks.Image")));
+            this.BtnTasks.Location = new System.Drawing.Point(0, 483);
+            this.BtnTasks.Name = "BtnTasks";
+            this.BtnTasks.Size = new System.Drawing.Size(276, 49);
+            this.BtnTasks.TabIndex = 5;
+            this.BtnTasks.Text = "Tasks view      ";
+            this.BtnTasks.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnTasks.UseVisualStyleBackColor = false;
+            this.BtnTasks.Click += new System.EventHandler(this.BtnTasks_Click);
+            // 
             // lblVersion
             // 
             this.lblVersion.AutoSize = true;
@@ -64,9 +84,9 @@
             this.lblVersion.ForeColor = System.Drawing.Color.White;
             this.lblVersion.Location = new System.Drawing.Point(83, 698);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(91, 20);
+            this.lblVersion.Size = new System.Drawing.Size(93, 20);
             this.lblVersion.TabIndex = 4;
-            this.lblVersion.Text = "Version: 0.1.3";
+            this.lblVersion.Text = "Version: 0.2.0";
             // 
             // pictureBox1
             // 
@@ -89,9 +109,9 @@
             this.BtnConfiguration.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConfiguration.ForeColor = System.Drawing.Color.White;
             this.BtnConfiguration.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfiguration.Image")));
-            this.BtnConfiguration.Location = new System.Drawing.Point(-3, 428);
+            this.BtnConfiguration.Location = new System.Drawing.Point(0, 428);
             this.BtnConfiguration.Name = "BtnConfiguration";
-            this.BtnConfiguration.Size = new System.Drawing.Size(282, 49);
+            this.BtnConfiguration.Size = new System.Drawing.Size(279, 49);
             this.BtnConfiguration.TabIndex = 2;
             this.BtnConfiguration.Text = "Configuration";
             this.BtnConfiguration.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -125,9 +145,9 @@
             this.BtnMain.Font = new System.Drawing.Font("Nirmala UI Semilight", 13.8F);
             this.BtnMain.ForeColor = System.Drawing.Color.White;
             this.BtnMain.Image = ((System.Drawing.Image)(resources.GetObject("BtnMain.Image")));
-            this.BtnMain.Location = new System.Drawing.Point(-3, 318);
+            this.BtnMain.Location = new System.Drawing.Point(0, 318);
             this.BtnMain.Name = "BtnMain";
-            this.BtnMain.Size = new System.Drawing.Size(279, 49);
+            this.BtnMain.Size = new System.Drawing.Size(276, 49);
             this.BtnMain.TabIndex = 0;
             this.BtnMain.Text = "Main              ";
             this.BtnMain.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -220,6 +240,7 @@
         private System.Windows.Forms.Panel PnTop;
         private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Button BtnMinimize;
+        private System.Windows.Forms.Button BtnTasks;
     }
 }
 

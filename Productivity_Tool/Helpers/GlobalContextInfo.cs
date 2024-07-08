@@ -20,6 +20,8 @@ namespace Productivity_Tool.Helpers
         public TimerObj CurrentTime;
         public int Mode = 0;
         public int PomodoroValue = 0;
+        public int CurrentTaskId;
+        public string CurrentTaskName;
         public DateTime CurrentDate;
         public int MonthId;
 

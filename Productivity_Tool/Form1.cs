@@ -173,5 +173,19 @@ namespace Productivity_Tool
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void BtnTasks_Click(object sender, EventArgs e)
+        {
+            if (this.MainDisplayPN.Controls[0].Name == "TasksView")
+            {
+                return;
+            }
+
+            TasksView f = new TasksView();
+            f.Dock = DockStyle.Fill;
+            this.MainDisplayPN.Controls.RemoveAt(0);
+            this.MainDisplayPN.Controls.Add(f);
+            f.Show();
+        }
     }
 }

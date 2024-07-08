@@ -54,11 +54,15 @@
     <Compile Include="Entities\Configurations.cs" />
     <Compile Include="Entities\MonthSession.cs" />
     <Compile Include="Entities\StudySessions.cs" />
+    <Compile Include="Entities\Tasks.cs" />
+    <Compile Include="Entities\TaskSessions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ConfigurationRepository.cs" />
     <Compile Include="Repositories\DbContext.cs" />
     <Compile Include="Repositories\MonthSessionRepository.cs" />
     <Compile Include="Repositories\StudySessionsRepository.cs" />
+    <Compile Include="Repositories\TaskRepository.cs" />
+    <Compile Include="Repositories\TaskSessionsRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

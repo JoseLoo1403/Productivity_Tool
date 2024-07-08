@@ -53,12 +53,12 @@
             this.GoalBar.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
             this.GoalBar.AnimationSpeed = 500;
             this.GoalBar.BackColor = System.Drawing.Color.Transparent;
-            this.GoalBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GoalBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GoalBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.GoalBar.InnerColor = System.Drawing.Color.Transparent;
             this.GoalBar.InnerMargin = 2;
             this.GoalBar.InnerWidth = -1;
-            this.GoalBar.Location = new System.Drawing.Point(490, 3);
+            this.GoalBar.Location = new System.Drawing.Point(524, 23);
             this.GoalBar.MarqueeAnimationSpeed = 2000;
             this.GoalBar.Name = "GoalBar";
             this.GoalBar.OuterColor = System.Drawing.Color.Gray;
@@ -68,7 +68,7 @@
             this.GoalBar.ProgressWidth = 25;
             this.GoalBar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.GoalBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GoalBar.Size = new System.Drawing.Size(235, 239);
+            this.GoalBar.Size = new System.Drawing.Size(230, 230);
             this.GoalBar.StartAngle = 270;
             this.GoalBar.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.GoalBar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -97,9 +97,9 @@
             this.CbMonth.Font = new System.Drawing.Font("Nirmala UI Semilight", 10F);
             this.CbMonth.FormattingEnabled = true;
             this.CbMonth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.CbMonth.Location = new System.Drawing.Point(534, 272);
+            this.CbMonth.Location = new System.Drawing.Point(569, 276);
             this.CbMonth.Name = "CbMonth";
-            this.CbMonth.Size = new System.Drawing.Size(165, 31);
+            this.CbMonth.Size = new System.Drawing.Size(185, 31);
             this.CbMonth.TabIndex = 4;
             this.CbMonth.SelectedIndexChanged += new System.EventHandler(this.CbMonth_SelectedIndexChanged);
             // 
@@ -129,7 +129,7 @@
             this.MonthGraph.BackColorTransparent = true;
             this.MonthGraph.Location = new System.Drawing.Point(18, 309);
             this.MonthGraph.Name = "MonthGraph";
-            this.MonthGraph.Size = new System.Drawing.Size(707, 372);
+            this.MonthGraph.Size = new System.Drawing.Size(745, 372);
             this.MonthGraph.TabIndex = 7;
             this.MonthGraph.Visible = false;
             // 
@@ -140,7 +140,7 @@
             this.BtnGraphView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.BtnGraphView.FlatAppearance.BorderSize = 0;
             this.BtnGraphView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGraphView.Location = new System.Drawing.Point(463, 268);
+            this.BtnGraphView.Location = new System.Drawing.Point(486, 272);
             this.BtnGraphView.Name = "BtnGraphView";
             this.BtnGraphView.Size = new System.Drawing.Size(48, 40);
             this.BtnGraphView.TabIndex = 8;
@@ -161,7 +161,7 @@
             this.Controls.Add(this.GoalBar);
             this.Controls.Add(this.LblStreak);
             this.Name = "Main";
-            this.Size = new System.Drawing.Size(750, 700);
+            this.Size = new System.Drawing.Size(821, 705);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

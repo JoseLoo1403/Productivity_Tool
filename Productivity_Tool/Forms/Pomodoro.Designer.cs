@@ -45,6 +45,7 @@ namespace Productivity_Tool.Forms
             this.BtnSkip = new System.Windows.Forms.Button();
             this.BtnStart = new Guna.UI2.WinForms.Guna2Button();
             this.BtnStop = new Guna.UI2.WinForms.Guna2Button();
+            this.CbTasks = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // timer1
@@ -63,7 +64,7 @@ namespace Productivity_Tool.Forms
             this.TimerBar.InnerColor = System.Drawing.Color.Transparent;
             this.TimerBar.InnerMargin = 2;
             this.TimerBar.InnerWidth = -1;
-            this.TimerBar.Location = new System.Drawing.Point(261, 36);
+            this.TimerBar.Location = new System.Drawing.Point(197, 26);
             this.TimerBar.MarqueeAnimationSpeed = 2000;
             this.TimerBar.Name = "TimerBar";
             this.TimerBar.OuterColor = System.Drawing.Color.Gray;
@@ -94,7 +95,7 @@ namespace Productivity_Tool.Forms
             this.BtnConfig.FlatAppearance.BorderSize = 0;
             this.BtnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfig.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfig.Image")));
-            this.BtnConfig.Location = new System.Drawing.Point(422, 531);
+            this.BtnConfig.Location = new System.Drawing.Point(358, 521);
             this.BtnConfig.Name = "BtnConfig";
             this.BtnConfig.Size = new System.Drawing.Size(47, 36);
             this.BtnConfig.TabIndex = 4;
@@ -107,7 +108,7 @@ namespace Productivity_Tool.Forms
             this.LblStudyInfo.AutoSize = true;
             this.LblStudyInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblStudyInfo.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.LblStudyInfo.Location = new System.Drawing.Point(190, 580);
+            this.LblStudyInfo.Location = new System.Drawing.Point(126, 570);
             this.LblStudyInfo.Name = "LblStudyInfo";
             this.LblStudyInfo.Size = new System.Drawing.Size(48, 25);
             this.LblStudyInfo.TabIndex = 6;
@@ -121,7 +122,7 @@ namespace Productivity_Tool.Forms
             this.LblRestInfo.AutoSize = true;
             this.LblRestInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblRestInfo.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.LblRestInfo.Location = new System.Drawing.Point(502, 580);
+            this.LblRestInfo.Location = new System.Drawing.Point(438, 570);
             this.LblRestInfo.Name = "LblRestInfo";
             this.LblRestInfo.Size = new System.Drawing.Size(48, 25);
             this.LblRestInfo.TabIndex = 7;
@@ -134,7 +135,7 @@ namespace Productivity_Tool.Forms
             this.LblMessage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblMessage.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.LblMessage.Location = new System.Drawing.Point(182, 409);
+            this.LblMessage.Location = new System.Drawing.Point(118, 399);
             this.LblMessage.Name = "LblMessage";
             this.LblMessage.Size = new System.Drawing.Size(524, 25);
             this.LblMessage.TabIndex = 8;
@@ -143,7 +144,7 @@ namespace Productivity_Tool.Forms
             // 
             // AnimationTimer
             // 
-            this.AnimationTimer.Interval = 180;
+            this.AnimationTimer.Interval = 200;
             this.AnimationTimer.Tick += new System.EventHandler(this.AnimationTimer_Tick);
             // 
             // LblSessionCount
@@ -152,7 +153,7 @@ namespace Productivity_Tool.Forms
             this.LblSessionCount.AutoSize = true;
             this.LblSessionCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LblSessionCount.Font = new System.Drawing.Font("Nirmala UI Semilight", 9.8F);
-            this.LblSessionCount.Location = new System.Drawing.Point(435, 255);
+            this.LblSessionCount.Location = new System.Drawing.Point(371, 245);
             this.LblSessionCount.Name = "LblSessionCount";
             this.LblSessionCount.Size = new System.Drawing.Size(34, 23);
             this.LblSessionCount.TabIndex = 9;
@@ -166,7 +167,7 @@ namespace Productivity_Tool.Forms
             this.BtnRestartCount.FlatAppearance.BorderSize = 2;
             this.BtnRestartCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRestartCount.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
-            this.BtnRestartCount.Location = new System.Drawing.Point(316, 631);
+            this.BtnRestartCount.Location = new System.Drawing.Point(252, 621);
             this.BtnRestartCount.Name = "BtnRestartCount";
             this.BtnRestartCount.Size = new System.Drawing.Size(267, 40);
             this.BtnRestartCount.TabIndex = 10;
@@ -196,7 +197,7 @@ namespace Productivity_Tool.Forms
             this.BtnSkip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(74)))), ((int)(((byte)(145)))));
             this.BtnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSkip.Font = new System.Drawing.Font("Nirmala UI Semilight", 8F);
-            this.BtnSkip.Location = new System.Drawing.Point(422, 281);
+            this.BtnSkip.Location = new System.Drawing.Point(358, 271);
             this.BtnSkip.Name = "BtnSkip";
             this.BtnSkip.Size = new System.Drawing.Size(55, 31);
             this.BtnSkip.TabIndex = 12;
@@ -223,7 +224,7 @@ namespace Productivity_Tool.Forms
             this.BtnStart.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
             this.BtnStart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
             this.BtnStart.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnStart.Location = new System.Drawing.Point(161, 464);
+            this.BtnStart.Location = new System.Drawing.Point(97, 454);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.ShadowDecoration.BorderRadius = 28;
             this.BtnStart.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(221)))), ((int)(((byte)(241)))));
@@ -236,7 +237,6 @@ namespace Productivity_Tool.Forms
             // 
             // BtnStop
             // 
-            Thread.Sleep(100);
             this.BtnStop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnStop.Animated = true;
             this.BtnStop.BackColor = System.Drawing.Color.Transparent;
@@ -252,7 +252,7 @@ namespace Productivity_Tool.Forms
             this.BtnStop.ForeColor = System.Drawing.Color.Black;
             this.BtnStop.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
             this.BtnStop.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(117)))), ((int)(((byte)(255)))));
-            this.BtnStop.Location = new System.Drawing.Point(475, 464);
+            this.BtnStop.Location = new System.Drawing.Point(411, 454);
             this.BtnStop.Name = "BtnStop";
             this.BtnStop.ShadowDecoration.BorderRadius = 26;
             this.BtnStop.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(221)))), ((int)(((byte)(241)))));
@@ -262,11 +262,29 @@ namespace Productivity_Tool.Forms
             this.BtnStop.Text = "Pause";
             this.BtnStop.Click += new System.EventHandler(this.BtnStop_Click);
             // 
+            // CbTasks
+            // 
+            this.CbTasks.BackColor = System.Drawing.Color.Transparent;
+            this.CbTasks.BorderRadius = 10;
+            this.CbTasks.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbTasks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbTasks.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CbTasks.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CbTasks.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
+            this.CbTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CbTasks.ItemHeight = 30;
+            this.CbTasks.Location = new System.Drawing.Point(545, 19);
+            this.CbTasks.Name = "CbTasks";
+            this.CbTasks.Size = new System.Drawing.Size(189, 36);
+            this.CbTasks.TabIndex = 17;
+            this.CbTasks.SelectedIndexChanged += new System.EventHandler(this.CbTasks_SelectedIndexChanged);
+            // 
             // Pomodoro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.CbTasks);
             this.Controls.Add(this.BtnStop);
             this.Controls.Add(this.BtnStart);
             this.Controls.Add(this.BtnSkip);
@@ -280,11 +298,11 @@ namespace Productivity_Tool.Forms
             this.Controls.Add(this.TimerBar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Pomodoro";
-            this.Size = new System.Drawing.Size(878, 720);
+            this.Size = new System.Drawing.Size(750, 700);
             this.Load += new System.EventHandler(this.Pomodoro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            Thread.Sleep(90);
         }
 
         #endregion
@@ -301,5 +319,6 @@ namespace Productivity_Tool.Forms
         private System.Windows.Forms.Button BtnSkip;
         private Guna.UI2.WinForms.Guna2Button BtnStart;
         private Guna.UI2.WinForms.Guna2Button BtnStop;
+        private Guna.UI2.WinForms.Guna2ComboBox CbTasks;
     }
 }

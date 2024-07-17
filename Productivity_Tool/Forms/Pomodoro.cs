@@ -236,6 +236,7 @@ namespace Productivity_Tool.Forms
             BtnStop.Enabled = true;
             BtnStart.Enabled = false;
             BtnRestartCount.Enabled = false;
+            CbTasks.Enabled = false;
 
             if (Mode == 0)
             {
@@ -333,6 +334,7 @@ namespace Productivity_Tool.Forms
                 BtnStart.Text = "Continue";
                 SaveStudyTime();
                 BtnRestartCount.Enabled = true;
+                CbTasks.Enabled = true;
             }
             else
             {
@@ -354,12 +356,14 @@ namespace Productivity_Tool.Forms
                 LblStudyInfo.Visible = false;
                 LblRestInfo.Visible = false;
                 BtnRestartCount.Visible = false;
+                CbTasks.Visible = true;
             }
             else
             {
                 LblStudyInfo.Visible = true;
                 LblRestInfo.Visible = true;
                 BtnRestartCount.Visible = true;
+                CbTasks.Visible = false;
             }
         }
 

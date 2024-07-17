@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Dapper;
 using Data.Entities;
 using System.Xml.Linq;
+using System.Dynamic;
 
 namespace Data.Repositories
 {
@@ -21,6 +22,42 @@ namespace Data.Repositories
 
                 return output;
             }
+        }
+
+        public List<int> GetAllTasksIdOfMonth(int MonthId)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
+            {
+                var StudySessions = cnn.Query<int>($"SELECT TaskSessions.Task_Id FROM TaskSessions INNER JOIN StudySessions ON TaskSessions.Session_Id = StudySessions.Id WHERE StudySessions.MonthId = {MonthId}", new DynamicParameters()).ToList();
+
+                return StudySessions.Distinct().ToList();
+            }
+        }
+
+        public double GetTotalTimeOfTaskByMonth(int MonthId, int TaskId)
+        {
+            double answer = 0;
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
+            {
+                string cmd = $@"
+                    SELECT TaskSessions.Time FROM TaskSessions 
+                    INNER JOIN StudySessions ON TaskSessions.Session_Id = StudySessions.Id
+                    WHERE StudySessions.MonthId = {MonthId} AND TaskSessions.Task_Id = {TaskId}
+                    ";
+
+                string[] t;
+
+                List<string> StudySessions = cnn.Query<string>(cmd, new DynamicParameters()).ToList();
+
+                foreach (var x in StudySessions)
+                {
+                    t = x.Split(':');
+
+                    answer += Convert.ToDouble(t[0]) + (Convert.ToDouble(t[1]) / 60) + (Convert.ToDouble(t[2]) / 3600);
+                }
+            }
+
+            return Math.Round(answer,4);
         }
 
         public TaskSessions GetTodayTaskSessionOrCreate(int TaskId)

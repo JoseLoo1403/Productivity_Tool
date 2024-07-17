@@ -6,6 +6,7 @@ using Data.Repositories;
 using Data.Entities;
 using System.Linq;
 using Productivity_Tool.Helpers;
+using System.Threading;
 
 namespace Productivity_Tool
 {
@@ -68,6 +69,7 @@ namespace Productivity_Tool
             BtnConfiguration.Enabled = arg;
             BtnMain.Enabled = arg;
             BtnPomodoro.Enabled = arg;
+            BtnTasks.Enabled = arg;
         }
 
         private void ZenModeEventHandler(object sender, bool e)

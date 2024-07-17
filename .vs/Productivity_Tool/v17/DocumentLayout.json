@@ -1,12 +1,87 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\productivity_tool\\forms\\tasksview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\forms\\tasksview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\productivity_tool\\forms\\tasksview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\forms\\tasksview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}|Data\\Data.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\data\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6ACB51CF-F960-4D41-BAE0-68D8DD79FFAF}|Data\\Data.csproj|solutionrelative:data\\repositories\\taskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|c:\\users\\jose loo\\desktop\\projects\\productivity_tool\\productivity_tool\\forms\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13BB003E-197A-4C8A-85CF-F28F97A454A6}|Productivity_Tool\\Productivity_Tool.csproj|solutionrelative:productivity_tool\\forms\\pomodoro.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 195,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Data\\Repositories\\TaskRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Repositories\\TaskRepository.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Data\\Repositories\\TaskRepository.cs",
+              "RelativeToolTip": "Data\\Repositories\\TaskRepository.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwEMAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T03:42:50.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TasksView.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\TasksView.cs",
+              "RelativeDocumentMoniker": "Productivity_Tool\\Forms\\TasksView.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\TasksView.cs",
+              "RelativeToolTip": "Productivity_Tool\\Forms\\TasksView.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAD4vzQAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T03:34:54.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TasksView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\TasksView.cs",
+              "RelativeDocumentMoniker": "Productivity_Tool\\Forms\\TasksView.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\TasksView.cs [Design]",
+              "RelativeToolTip": "Productivity_Tool\\Forms\\TasksView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T03:33:34.12Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Pomodoro.cs",
+              "DocumentMoniker": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\Pomodoro.cs",
+              "RelativeDocumentMoniker": "Productivity_Tool\\Forms\\Pomodoro.cs",
+              "ToolTip": "C:\\Users\\Jose Loo\\Desktop\\Projects\\Productivity_Tool\\Productivity_Tool\\Forms\\Pomodoro.cs",
+              "RelativeToolTip": "Productivity_Tool\\Forms\\Pomodoro.cs",
+              "ViewState": "AQIAAEMBAAAAAAAAAAASwE0BAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-12T03:30:17.027Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -64,7 +64,6 @@ namespace Productivity_Tool.Forms
             MonthSession SelectedMonth = repo.GetSessionByDate(date); 
             List<SessionModel> finalTable = new List<SessionModel>();
             List<SessionModel> formatS = new List<SessionModel>();
-            List<string> Days = new List<string>();
             ChartValues<double> studytime = new ChartValues<double>(); 
 
 
@@ -75,7 +74,6 @@ namespace Productivity_Tool.Forms
                 if (x.MonthId == SelectedMonth.Id)
                 {
                     formatS.Add(new SessionModel(x.Date, ConvertToHoursValue(x.Time)));
-                    Days.Add($"{x.Date[8]}{x.Date[9]}");
                 }
             }
 

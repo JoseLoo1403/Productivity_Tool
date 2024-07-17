@@ -273,9 +273,9 @@ namespace Productivity_Tool.Forms
             this.CbTasks.Font = new System.Drawing.Font("Nirmala UI Semilight", 10.8F);
             this.CbTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.CbTasks.ItemHeight = 30;
-            this.CbTasks.Location = new System.Drawing.Point(545, 19);
+            this.CbTasks.Location = new System.Drawing.Point(180, 570);
             this.CbTasks.Name = "CbTasks";
-            this.CbTasks.Size = new System.Drawing.Size(189, 36);
+            this.CbTasks.Size = new System.Drawing.Size(429, 36);
             this.CbTasks.TabIndex = 17;
             this.CbTasks.SelectedIndexChanged += new System.EventHandler(this.CbTasks_SelectedIndexChanged);
             // 

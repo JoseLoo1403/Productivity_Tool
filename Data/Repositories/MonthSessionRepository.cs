@@ -23,6 +23,16 @@ namespace Data.Repositories
             }
         }
 
+        public MonthSession GetCurrentMonthSession()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))
+            {
+                var id = cnn.Query<MonthSession>("select * from MonthSession last_value");
+
+                return id.LastOrDefault();
+            }
+        }
+
         public void AddTimeToCurrentSession(int Hours, int minutes, int seconds)
         {
             using (IDbConnection cnn = new SQLiteConnection(DbContext.LoadConnectionString()))

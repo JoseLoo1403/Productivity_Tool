@@ -68,9 +68,9 @@ namespace Data.Repositories
                     return;
                 }
 
-                cnn.Execute($"insert into StudySessions values ({id},'{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0','{monthId}')");
+                cnn.Execute($"insert into StudySessions values ({++id},'{DateTime.Today.ToString("yyyy/MM/dd")}','0:0:0','{monthId}')");
                 cnn.Execute("update Configurations set Value = '0' where Name = 'Current count'");
-                cnn.Execute($"UPDATE sqlite_sequence SET seq = {id++} WHERE name = 'StudySessions'");
+                cnn.Execute($"UPDATE sqlite_sequence SET seq = {id} WHERE name = 'StudySessions'");
             }
         }
 
